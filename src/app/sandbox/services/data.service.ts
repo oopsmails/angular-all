@@ -49,7 +49,7 @@ export class DataService implements OnDestroy {
     }
 
     mockHttpGetAllUsStates(): Observable<UsState[]> {
-        const timertTime = Math.floor(Math.random() * 2000);
+        const timertTime = Math.floor(Math.random() * 5000);
         // const timertTime = Math.floor(Math.random() * 8000);
         console.log(`Mock time taken by API: ${timertTime} milliseconds`);
 

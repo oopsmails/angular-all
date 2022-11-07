@@ -19,7 +19,7 @@ export class UsStateService {
         return this.httpClient.get('assets/mockdata/cities.json').pipe(
             map(
                 data => {
-                    console.log('Loading states and cities ..... ', data);
+                    // console.log('Loading states and cities ..... ', data);
                     if (data) {
                         statesData = Object.entries(data).sort();
 
