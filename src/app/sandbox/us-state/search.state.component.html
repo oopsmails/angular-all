@@ -1,0 +1,24 @@
+<h1>Search State in Component</h1>
+<h2>ChangeDetectionStrategy.OnPush in Component??</h2>
+<h2>Not using "cache" in UsStateService</h2>
+
+<input type="text" #search>
+
+<table class="table table-bordered">
+    <thead>
+        <tr>
+            <th>id</th>
+            <th>text</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let state of states$ | async">
+            <td>{{ state.id }}</td>
+            <td>{{ state.stateName }}</td>
+        </tr>
+    </tbody>
+</table>
+
+<h2>All State List: (There is a mock delay in DataService)</h2>
+<div *ngFor="let item of allStatesDelay$ | async">{{ item.id }} - {{ item.stateName}}</div>
+
