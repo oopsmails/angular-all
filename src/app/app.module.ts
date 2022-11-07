@@ -8,13 +8,13 @@ import { AppComponent } from './app.component';
 import { NavbarFixedComponent } from './core/navbar-fixed/navbar-fixed.component';
 import { AppInitService } from './core/services/app.init.service';
 import { UtilsService } from './core/services/utils.service';
-import { CityFilterPipe } from './example/city/city.filter.pipe';
-import { SearchCityComponent } from './example/city/search.city.component';
-import { PlantFilterPipe } from './example/plant/plant.filter.pipe';
-import { SearchPlantComponent } from './example/plant/search.plant.component';
-import { UsStateService } from './example/services/us.state.city.service';
-import { SearchStateComponent } from './example/us-state/search.state.component';
-import { UsStateComponent } from './example/us-state/us.state.component';
+import { CityFilterPipe } from './sandbox/city/city.filter.pipe';
+import { SearchCityComponent } from './sandbox/city/search.city.component';
+import { PlantFilterPipe } from './sandbox/plant/plant.filter.pipe';
+import { SearchPlantComponent } from './sandbox/plant/search.plant.component';
+import { UsStateService } from './sandbox/services/us.state.city.service';
+import { SearchStateComponent } from './sandbox/us-state/search.state.component';
+import { UsStateComponent } from './sandbox/us-state/us.state.component';
 import { HomeComponent } from './home/home.component';
 
 @NgModule({
