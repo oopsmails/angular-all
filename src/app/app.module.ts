@@ -1,32 +1,45 @@
 import { HttpClientModule } from '@angular/common/http';
 import { NgModule } from '@angular/core';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { PostsModule } from './posts/posts.module';
-import { StoreModule } from '@ngrx/store';
-import { StoreDevtoolsModule } from '@ngrx/store-devtools';
-import { environment } from 'src/environments/environment';
-import { EffectsModule } from '@ngrx/effects';
+import { NavbarFixedComponent } from './core/navbar-fixed/navbar-fixed.component';
+import { AppInitService } from './core/services/app.init.service';
+import { UtilsService } from './core/services/utils.service';
+import { CityFilterPipe } from './example/city/city.filter.pipe';
+import { SearchCityComponent } from './example/city/search.city.component';
+import { PlantFilterPipe } from './example/plant/plant.filter.pipe';
+import { SearchPlantComponent } from './example/plant/search.plant.component';
+import { UsStateService } from './example/services/us.state.city.service';
+import { SearchStateComponent } from './example/us-state/search.state.component';
+import { UsStateComponent } from './example/us-state/us.state.component';
 
 @NgModule({
-  declarations: [AppComponent],
+  declarations: [
+    AppComponent,
+    NavbarFixedComponent,
+    SearchCityComponent,
+    SearchPlantComponent,
+    SearchStateComponent,
+    UsStateComponent,
+    CityFilterPipe,
+    PlantFilterPipe
+  ],
   imports: [
     BrowserModule,
-    AppRoutingModule,
+    FormsModule,
+    ReactiveFormsModule,
     HttpClientModule,
-    BrowserAnimationsModule,
-    PostsModule,
-    StoreModule.forRoot({}),
-    EffectsModule.forRoot(),
-    StoreDevtoolsModule.instrument({
-      maxAge: 25, // Retains last 25 states
-      logOnly: environment.production, // Restrict extension to log-only mode
-      autoPause: true, // Pauses recording actions and state changes when the extension window is not open
-    }),
+    FontAwesomeModule,
+    AppRoutingModule
   ],
-  providers: [],
-  bootstrap: [AppComponent],
+  providers: [
+    AppInitService,
+    UtilsService,
+    UsStateService
+  ],
+  bootstrap: [AppComponent]
 })
-export class AppModule {}
+export class AppModule { }
