@@ -15,11 +15,13 @@ import { SearchPlantComponent } from './example/plant/search.plant.component';
 import { UsStateService } from './example/services/us.state.city.service';
 import { SearchStateComponent } from './example/us-state/search.state.component';
 import { UsStateComponent } from './example/us-state/us.state.component';
+import { HomeComponent } from './home/home.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     NavbarFixedComponent,
+    HomeComponent,
     SearchCityComponent,
     SearchPlantComponent,
     SearchStateComponent,
