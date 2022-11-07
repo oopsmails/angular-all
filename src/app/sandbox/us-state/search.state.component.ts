@@ -13,6 +13,7 @@ import { UsStateService } from '../services/us.state.city.service';
 export class SearchStateComponent implements OnInit {
     @ViewChild('search', { static: true }) search!: ElementRef;
 
+    allStatesDelay$: Observable<UsState[]>;
     allStates$: Observable<UsState[]>;
     states$: Observable<UsState[]>;
 
@@ -21,7 +22,8 @@ export class SearchStateComponent implements OnInit {
 
     ngOnInit() {
         // this is only for demoing mock delay in DataService
-        this.allStates$ = this.dataService.mockHttpGetAllUsStates();
+        this.allStatesDelay$ = this.dataService.mockHttpGetAllUsStates();
+        // this.allStates$ = this.usStateService.getUsStateCity();
 
         // switchMap fromEvent first then get data
         this.states$ = fromEvent(this.search.nativeElement, 'input')
@@ -34,6 +36,7 @@ export class SearchStateComponent implements OnInit {
                     console.log('searchText ..... = ', searchText);
                     if (searchText && searchText.trim().length >= 2) {
                         return this.usStateService.getUsStateCity().pipe(
+                        // return this.allStates$.pipe(
                             map(
                                 (items: UsState[]) => {
                                     return items.filter(item => item.stateName.toLocaleLowerCase().includes(searchText.toLocaleLowerCase()));
@@ -42,6 +45,7 @@ export class SearchStateComponent implements OnInit {
                         );
                     } else {
                         return this.usStateService.getUsStateCity();
+                        // return this.allStates$;
                     }
                 })
             );

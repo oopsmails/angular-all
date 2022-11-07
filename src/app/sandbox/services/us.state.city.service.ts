@@ -14,11 +14,11 @@ export class UsStateService {
     constructor(private httpClient: HttpClient) { }
 
     getUsStateCity(): Observable<UsState[]> {
-        let statesData: [string, any][];
-        let states: UsState[] = [];
         return this.httpClient.get('assets/mockdata/cities.json').pipe(
             map(
                 data => {
+                    let statesData: [string, any][];
+                    let states: UsState[] = [];
                     // console.log('Loading states and cities ..... ', data);
                     if (data) {
                         statesData = Object.entries(data).sort();
