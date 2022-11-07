@@ -7,13 +7,13 @@ import {
     Subject, takeUntil, timer
 } from 'rxjs';
 import { OptionItem } from 'src/app/core/models/sample.model';
-import { UsState } from './../models/us.state.city.model';
+import { UsState } from '../models/us.state.city.model';
 import { UsStateService } from './us.state.city.service';
 
 @Injectable({
     providedIn: 'root',
 })
-export class DataService implements OnDestroy {
+export class SandboxDataService implements OnDestroy {
 
     public optionItems = [
         { optionId: 1, optionTitle: 'option 1' },

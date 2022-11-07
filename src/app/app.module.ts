@@ -16,6 +16,7 @@ import { UsStateService } from './sandbox/services/us.state.city.service';
 import { SearchStateComponent } from './sandbox/us-state/search.state.component';
 import { UsStateComponent } from './sandbox/us-state/us.state.component';
 import { HomeComponent } from './home/home.component';
+import { StorePocModule } from './store-poc/store.module';
 
 @NgModule({
   declarations: [
@@ -35,6 +36,7 @@ import { HomeComponent } from './home/home.component';
     ReactiveFormsModule,
     HttpClientModule,
     FontAwesomeModule,
+    StorePocModule, // has to before AppRoutingModule
     AppRoutingModule
   ],
   providers: [

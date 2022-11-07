@@ -2,8 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { Subject } from 'rxjs';
 import { takeUntil } from 'rxjs/operators';
-import { DataService } from '../services/data.service';
-
+import { SandboxDataService } from '../services/sandbox.data.service';
 @Component({
   selector: 'app-search-plant',
   templateUrl: './search.plant.component.html',
@@ -15,7 +14,7 @@ export class SearchPlantComponent implements OnInit, OnDestroy {
 
   private onDestroy$: Subject<boolean> = new Subject();
 
-  constructor(private httpClient: HttpClient, private dataService: DataService) {
+  constructor(private httpClient: HttpClient, private sandboxDataService: SandboxDataService) {
   }
 
   ngOnInit() {
