@@ -6,7 +6,8 @@ import { UsStateService } from '../services/us.state.city.service';
 
 @Component({
   selector: 'app-us-state',
-  templateUrl: './us.state.component.html'
+  templateUrl: './us.state.component.html',
+  styleUrls: ['./us.state.component.scss'],
 })
 export class UsStateComponent implements OnInit {
   faAngleLeft = faAngleLeft;
