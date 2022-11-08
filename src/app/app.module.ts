@@ -8,6 +8,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { CoreModule } from './core/core.module';
 import { AppInitService } from './core/services/app.init.service';
+import { ExampleModule } from './example/example.model';
 import { HomeComponent } from './home/home.component';
 import { CityFilterPipe } from './sandbox/city/city.filter.pipe';
 import { SearchCityComponent } from './sandbox/city/search.city.component';
@@ -34,6 +35,7 @@ import { StorePocModule } from './store-poc/store.poc.module';
     FontAwesomeModule,
     SharedModule,
     CoreModule,
+    ExampleModule,
     SandboxModule,
     StorePocModule, // has to before AppRoutingModule
     AppRoutingModule

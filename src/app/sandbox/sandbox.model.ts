@@ -10,12 +10,14 @@ import { CityFilterPipe } from "./city/city.filter.pipe";
 import { SearchCityComponent } from "./city/search.city.component";
 import { PlantFilterPipe } from "./plant/plant.filter.pipe";
 import { SearchPlantComponent } from "./plant/search.plant.component";
+import { SandboxHomeComponent } from "./sandbox.home.component";
 import { SandboxDataService } from "./services/sandbox.data.service";
 import { UsStateService } from "./services/us.state.city.service";
 import { SearchStateComponent } from "./us-state/search.state.component";
 import { UsStateComponent } from "./us-state/us.state.component";
 
 const routes: Routes = [
+    { path: 'sandbox/home', component: SandboxHomeComponent },
     { path: 'sandbox/us-state', component: UsStateComponent },
     { path: 'sandbox/search-city', component: SearchCityComponent },
     { path: 'sandbox/search-plant', component: SearchPlantComponent },
@@ -33,6 +35,7 @@ const routes: Routes = [
         RouterModule.forChild(routes)
     ],
     declarations: [
+        SandboxHomeComponent,
         SearchCityComponent,
         SearchPlantComponent,
         SearchStateComponent,
