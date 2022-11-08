@@ -13,6 +13,7 @@ import { CityFilterPipe } from './sandbox/city/city.filter.pipe';
 import { SearchCityComponent } from './sandbox/city/search.city.component';
 import { PlantFilterPipe } from './sandbox/plant/plant.filter.pipe';
 import { SearchPlantComponent } from './sandbox/plant/search.plant.component';
+import { SandboxModule } from './sandbox/sandbox.model';
 import { UsStateService } from './sandbox/services/us.state.city.service';
 import { SearchStateComponent } from './sandbox/us-state/search.state.component';
 import { UsStateComponent } from './sandbox/us-state/us.state.component';
@@ -23,13 +24,7 @@ import { StorePocModule } from './store-poc/store.poc.module';
 @NgModule({
   declarations: [
     AppComponent,
-    HomeComponent,
-    SearchCityComponent,
-    SearchPlantComponent,
-    SearchStateComponent,
-    UsStateComponent,
-    CityFilterPipe,
-    PlantFilterPipe
+    HomeComponent
   ],
   imports: [
     BrowserModule,
@@ -39,12 +34,12 @@ import { StorePocModule } from './store-poc/store.poc.module';
     FontAwesomeModule,
     SharedModule,
     CoreModule,
+    SandboxModule,
     StorePocModule, // has to before AppRoutingModule
     AppRoutingModule
   ],
   providers: [
-    AppInitService,
-    UsStateService
+    AppInitService
   ],
   bootstrap: [AppComponent]
 })
