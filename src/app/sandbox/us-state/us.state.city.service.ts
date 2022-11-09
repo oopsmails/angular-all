@@ -5,7 +5,7 @@ import {
     map,
     Observable
 } from 'rxjs';
-import { UsCity, UsState } from '../models/us.state.city.model';
+import { UsCity, UsState } from './us.state.city.model';
 
 @Injectable({
     providedIn: 'root',

@@ -7,7 +7,7 @@ import {
     Subject, takeUntil, timer
 } from 'rxjs';
 import { OptionItem } from 'src/app/shared/models/sample.model';
-import { UsState } from '../models/us.state.city.model';
+import { UsState } from '../us-state/us.state.city.model';
 import { UsStateService } from '../us-state/us.state.city.service';
 
 @Injectable({

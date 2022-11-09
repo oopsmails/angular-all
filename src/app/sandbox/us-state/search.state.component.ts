@@ -2,7 +2,7 @@ import { SANDBOX_BACK_TO_HOME } from './../models/sandbox.constants';
 import { ChangeDetectionStrategy, Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import { debounceTime, distinctUntilChanged, fromEvent, map, Observable, startWith, switchMap } from 'rxjs';
 import { SANDBOX_HOME_LINK } from '../models/sandbox.constants';
-import { UsState } from '../models/us.state.city.model';
+import { UsState } from './us.state.city.model';
 import { SandboxDataService } from '../services/sandbox.data.service';
 import { UsStateService } from './us.state.city.service';
 
