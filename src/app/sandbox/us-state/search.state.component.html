@@ -2,7 +2,7 @@
 <h2>ChangeDetectionStrategy.OnPush in Component??</h2>
 <h2>Not using "cache" in UsStateService</h2>
 
-<input type="text" #search>
+<input type="text" #search [(ngModel)]=searchName placeholder="Find state">
 
 <table class="table table-bordered">
     <thead>
@@ -14,7 +14,8 @@
     <tbody>
         <tr *ngFor="let state of states$ | async">
             <td>{{ state.id }}</td>
-            <td>{{ state.stateName }}</td>
+            <!-- <td>{{ state.stateName }}</td> -->
+            <td><div [innerHtml]="state.stateName| highlighter:searchName:'partial'"></div></td>
         </tr>
     </tbody>
 </table>

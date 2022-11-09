@@ -13,6 +13,8 @@ import { UsStateService } from '../services/us.state.city.service';
 export class SearchStateComponent implements OnInit {
     @ViewChild('search', { static: true }) search!: ElementRef;
 
+    searchName: string;
+
     allStatesDelay$: Observable<UsState[]>;
     allStates$: Observable<UsState[]>;
     states$: Observable<UsState[]>;
@@ -79,7 +81,7 @@ export class SearchStateComponent implements OnInit {
 
     private searchFilterPredicate(item: UsState, searchText: string) {
         const searchTextTokens = searchText.split(' ');
-        console.log('searchTextTokens ..... = ', searchTextTokens);
+        // console.log('searchTextTokens ..... = ', searchTextTokens);
         if (searchTextTokens && searchTextTokens.length <= 1) {
             return item.stateName.toLocaleLowerCase().includes(searchText.toLocaleLowerCase()); // no token search needed
         }

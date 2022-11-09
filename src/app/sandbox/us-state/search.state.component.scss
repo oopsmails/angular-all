@@ -16,3 +16,7 @@ td {
 tr:hover {
     background-color: coral;
 }
+
+::ng-deep .highlighted-text {
+    background-color: yellow;
+}
