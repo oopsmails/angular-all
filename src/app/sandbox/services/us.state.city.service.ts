@@ -46,6 +46,24 @@ export class UsStateService {
         );
     }
 
+    getUsStateCitySlice(indexes: number[]): Observable<UsState[]> {
+        return this.getUsStateCity().pipe(
+            map(
+                (items: UsState[]) => {
+                    const result = [];
+                    items.forEach(
+                        (item: UsState) => {
+                            if (indexes.includes(item.id)) {
+                                result.push(item);
+                            }
+                        }
+                    );
+                    return result;
+                }
+            )
+        );
+    }
+
     getUsCities() {
         let cities: UsCity[] = [];
         let retCities: UsCity[] = [];

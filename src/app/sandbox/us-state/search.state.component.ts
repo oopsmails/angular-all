@@ -35,11 +35,12 @@ export class SearchStateComponent implements OnInit {
                 switchMap((searchText: string) => {
                     console.log('searchText ..... = ', searchText);
                     if (searchText && searchText.trim().length >= 2) {
+                        // return this.usStateService.getUsStateCitySlice([33, 34]).pipe(
                         return this.usStateService.getUsStateCity().pipe(
                             // return this.allStates$.pipe(
                             map(
                                 (items: UsState[]) => {
-                                    return items.filter(item => item.stateName.toLocaleLowerCase().includes(searchText.toLocaleLowerCase()));
+                                    return items.filter((item: UsState) => this.searchFilterPredicate(item, searchText));
                                 }
                             )
                         );
@@ -74,5 +75,24 @@ export class SearchStateComponent implements OnInit {
         //                     )
         //         })
         //     );
+    }
+
+    private searchFilterPredicate(item: UsState, searchText: string) {
+        const searchTextTokens = searchText.split(' ');
+        console.log('searchTextTokens ..... = ', searchTextTokens);
+        if (searchTextTokens && searchTextTokens.length <= 1) {
+            return item.stateName.toLocaleLowerCase().includes(searchText.toLocaleLowerCase()); // no token search needed
+        }
+        return this.tokenizeSearchPredicate(item, searchTextTokens);
+    }
+
+    private tokenizeSearchPredicate(item: UsState, searchTextTokens: string[]): boolean {
+        let result = true;
+        searchTextTokens.forEach(
+            (searchToken: string) => {
+                result = result && item.stateName.toLocaleLowerCase().includes(searchToken.toLocaleLowerCase());
+            }
+        )
+        return result;
     }
 }
