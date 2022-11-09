@@ -6,7 +6,7 @@ import {
     of,
     Subject, takeUntil, timer
 } from 'rxjs';
-import { OptionItem } from 'src/app/core/models/sample.model';
+import { OptionItem } from 'src/app/shared/models/sample.model';
 import { UsState } from '../models/us.state.city.model';
 import { UsStateService } from './us.state.city.service';
 
