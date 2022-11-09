@@ -12,8 +12,6 @@ import { NotFoundComponent } from "./components/not-found/not-found.component";
     NavbarFixedComponent,
     NotFoundComponent,
     BackAngleComponent,
-    // ElementChangingDirective,
-    // MouseoverColorDirective,
     FooterComponent
   ],
   imports: [
@@ -25,9 +23,7 @@ import { NotFoundComponent } from "./components/not-found/not-found.component";
     NavbarFixedComponent,
     FooterComponent,
     NotFoundComponent,
-    BackAngleComponent,
-    // ElementChangingDirective,
-    // MouseoverColorDirective
+    BackAngleComponent
   ],
 })
 export class CoreModule { }

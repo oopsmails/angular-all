@@ -12,7 +12,7 @@ export class AppComponent implements OnInit {
   }
 
   ngOnInit() {
-    console.log('in AppComponent');
+    // console.log('in AppComponent');
   }
 
 }

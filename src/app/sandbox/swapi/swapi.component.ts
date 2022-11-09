@@ -32,7 +32,7 @@ export class SwapiComponent implements OnInit, OnDestroy {
   }
 
   ngOnDestroy() {
-    console.log('------------- in ngOnDestroy ----------------');
+    // console.log('SwapiComponent, ------------- in ngOnDestroy ----------------');
   }
 
 }

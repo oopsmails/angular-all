@@ -28,7 +28,7 @@ export class NavbarFixedComponent implements OnInit, AfterViewInit, OnDestroy {
     // this.navbarClick = fromEvent(this.navbarElementRef.nativeElement, 'click').subscribe(
     fromEvent(this.navbarElementRef.nativeElement, 'click').pipe(takeUntil(this.onDestory$)).subscribe(
       (x) => {
-        console.log(x);
+        // console.log("NavbarFixedComponent, ngAfterViewInit ... ", x);
         this.menubarElementRef.nativeElement?.click();
       }
     );
