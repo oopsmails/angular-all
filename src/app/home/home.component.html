@@ -1,0 +1,28 @@
+<div class="mainContainer">
+    <h1>Home</h1>
+    <p>
+        This is in 'div class="mainContainer"''. It is defined in
+        <span class="spanFileBackground">styles.scss</span>,
+        but overriden in <span class="spanFileBackground">home.component.scss</span>.
+    </p>
+
+    <h2>Home Tab: for testing
+        common components in <i [innerHtml]="'core'| highlighter:'core':'partial'"></i>
+        and
+        <i [innerHtml]="'shared'| highlighter:'shared':'full'"></i>
+    </h2>
+
+    <div class="linkListingDiv">
+        <h3>Item Listing: for testing around</h3>
+        <p><a routerLink="/home/card-host">/home/card-host: Directive test</a></p>
+    </div>
+
+
+    <hr>
+    <p><a routerLink="/example/home">Example Home</a></p>
+    <p><a routerLink="/sandbox/home">Sandbox Home</a></p>
+
+    <hr>
+    <p><a routerLink="">routerLink home</a></p>
+
+</div>
