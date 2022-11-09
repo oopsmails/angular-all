@@ -4,8 +4,10 @@
 
 <app-back-angle [linkText]=linkText [routerLinkInput]=routerLinkInput></app-back-angle>
 
-<input type="text" #search [(ngModel)]=searchName placeholder="Find state">
-
+<div class="searcTexthDiv">
+    <img src="../assets/Group%201.png" width="18px" class="search">
+    <input type="text" #search [(ngModel)]=searchName placeholder="Find state">
+</div>
 <table class="table table-bordered">
     <thead>
         <tr>

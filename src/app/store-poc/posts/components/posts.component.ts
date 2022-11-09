@@ -2,13 +2,13 @@ import { Component, OnInit } from '@angular/core';
 import { select, Store } from '@ngrx/store';
 import { Observable } from 'rxjs';
 import { AppStateInterface } from 'src/app/shared/types/appState.interface';
-import * as PostsActions from '../../store/actions';
+import * as PostsActions from '../store/actions';
 import {
   errorSelector,
   isLoadingSelector,
   postsSelector,
-} from '../../store/selectors';
-import { PostInterface } from '../../types/post.interface';
+} from '../store/selectors';
+import { PostInterface } from '../types/post.interface';
 
 @Component({
   selector: 'posts',
