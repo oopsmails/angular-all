@@ -8,7 +8,7 @@ import {
 } from 'rxjs';
 import { OptionItem } from 'src/app/shared/models/sample.model';
 import { UsState } from '../models/us.state.city.model';
-import { UsStateService } from './us.state.city.service';
+import { UsStateService } from '../us-state/us.state.city.service';
 
 @Injectable({
     providedIn: 'root',

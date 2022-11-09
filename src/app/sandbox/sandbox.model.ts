@@ -12,7 +12,7 @@ import { PlantFilterPipe } from "./plant/plant.filter.pipe";
 import { SearchPlantComponent } from "./plant/search.plant.component";
 import { SandboxHomeComponent } from "./sandbox.home.component";
 import { SandboxDataService } from "./services/sandbox.data.service";
-import { UsStateService } from "./services/us.state.city.service";
+import { UsStateService } from "./us-state/us.state.city.service";
 import { SearchStateComponent } from "./us-state/search.state.component";
 import { UsStateComponent } from "./us-state/us.state.component";
 

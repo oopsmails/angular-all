@@ -4,7 +4,7 @@ import { debounceTime, distinctUntilChanged, fromEvent, map, Observable, startWi
 import { SANDBOX_HOME_LINK } from '../models/sandbox.constants';
 import { UsState } from '../models/us.state.city.model';
 import { SandboxDataService } from '../services/sandbox.data.service';
-import { UsStateService } from '../services/us.state.city.service';
+import { UsStateService } from './us.state.city.service';
 
 @Component({
     selector: 'app-search-state',

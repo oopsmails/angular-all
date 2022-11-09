@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Observable } from 'rxjs';
 import { SANDBOX_BACK_TO_HOME, SANDBOX_HOME_LINK } from '../models/sandbox.constants';
 import { UsCity } from '../models/us.state.city.model';
-import { UsStateService } from '../services/us.state.city.service';
+import { UsStateService } from '../us-state/us.state.city.service';
 
 @Component({
   selector: 'app-search',

@@ -15,7 +15,7 @@ import { SearchCityComponent } from './sandbox/city/search.city.component';
 import { PlantFilterPipe } from './sandbox/plant/plant.filter.pipe';
 import { SearchPlantComponent } from './sandbox/plant/search.plant.component';
 import { SandboxModule } from './sandbox/sandbox.model';
-import { UsStateService } from './sandbox/services/us.state.city.service';
+import { UsStateService } from './sandbox/us-state/us.state.city.service';
 import { SearchStateComponent } from './sandbox/us-state/search.state.component';
 import { UsStateComponent } from './sandbox/us-state/us.state.component';
 import { SharedModule } from './shared/shared.module';
