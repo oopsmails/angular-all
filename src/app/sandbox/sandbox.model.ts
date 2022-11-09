@@ -15,6 +15,12 @@ import { SandboxDataService } from "./services/sandbox.data.service";
 import { UsStateService } from "./us-state/us.state.city.service";
 import { SearchStateComponent } from "./us-state/search.state.component";
 import { UsStateComponent } from "./us-state/us.state.component";
+import { NbaPlayerComponent } from "./nba-player/nba.player.component";
+import { NbaService } from "./nba-player/nba.service";
+import { SwapiComponent } from "./swapi/swapi.component";
+import { SwapiService } from "./swapi/swapi.service";
+import { OptionItemService } from "./option-item/option.item.service";
+import { OptionItemComponent } from "./option-item/option.item.component";
 
 const routes: Routes = [
     { path: 'sandbox/home', component: SandboxHomeComponent },
@@ -22,6 +28,9 @@ const routes: Routes = [
     { path: 'sandbox/search-city', component: SearchCityComponent },
     { path: 'sandbox/search-plant', component: SearchPlantComponent },
     { path: 'sandbox/search-state', component: SearchStateComponent },
+    { path: 'sandbox/nba-player', component: NbaPlayerComponent },
+    { path: 'sandbox/swapi', component: SwapiComponent },
+    { path: 'sandbox/option-item', component: OptionItemComponent },
 ];
 
 @NgModule({
@@ -40,12 +49,18 @@ const routes: Routes = [
         SearchPlantComponent,
         SearchStateComponent,
         UsStateComponent,
+        NbaPlayerComponent,
+        SwapiComponent,
+        OptionItemComponent,
         CityFilterPipe,
         PlantFilterPipe
     ],
     providers: [
         SandboxDataService,
-        UsStateService
+        UsStateService,
+        NbaService,
+        SwapiService,
+        OptionItemService
     ]
 })
 export class SandboxModule { }

@@ -11,3 +11,9 @@ export interface OptionItem {
     optionId: number;
     optionTitle: string;
 }
+
+export interface RandomItem {
+    id: number;
+    desc: string;
+}
+
