@@ -2,6 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { Subject } from 'rxjs';
 import { takeUntil } from 'rxjs/operators';
+import { SANDBOX_BACK_TO_HOME, SANDBOX_HOME_LINK } from '../models/sandbox.constants';
 import { SandboxDataService } from '../services/sandbox.data.service';
 @Component({
   selector: 'app-search-plant',
@@ -9,6 +10,9 @@ import { SandboxDataService } from '../services/sandbox.data.service';
   styleUrls: ['./search.plant.component.scss']
 })
 export class SearchPlantComponent implements OnInit, OnDestroy {
+  linkText = SANDBOX_BACK_TO_HOME;
+  routerLinkInput = SANDBOX_HOME_LINK;
+
   searchStr = '';
   allItems!: any[];
 

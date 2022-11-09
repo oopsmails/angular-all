@@ -1,5 +1,7 @@
+import { SANDBOX_BACK_TO_HOME } from './../models/sandbox.constants';
 import { ChangeDetectionStrategy, Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import { debounceTime, distinctUntilChanged, fromEvent, map, Observable, startWith, switchMap } from 'rxjs';
+import { SANDBOX_HOME_LINK } from '../models/sandbox.constants';
 import { UsState } from '../models/us.state.city.model';
 import { SandboxDataService } from '../services/sandbox.data.service';
 import { UsStateService } from '../services/us.state.city.service';
@@ -18,6 +20,9 @@ export class SearchStateComponent implements OnInit {
     allStatesDelay$: Observable<UsState[]>;
     allStates$: Observable<UsState[]>;
     states$: Observable<UsState[]>;
+
+    linkText = SANDBOX_BACK_TO_HOME;
+    routerLinkInput = SANDBOX_HOME_LINK;
 
     constructor(private usStateService: UsStateService, private sandboxDataService: SandboxDataService) {
     }
