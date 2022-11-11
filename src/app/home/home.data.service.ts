@@ -1,7 +1,7 @@
 import { HttpClient } from "@angular/common/http";
 import { Injectable, OnDestroy } from "@angular/core";
 import { Observable, of, Subject } from "rxjs";
-import { Card } from "./card-hosting/card-hosting.component";
+import { Card } from "./models/home.models";
 
 @Injectable({
     providedIn: 'root',
