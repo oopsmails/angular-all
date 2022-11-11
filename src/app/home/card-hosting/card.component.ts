@@ -1,7 +1,6 @@
 import { Component, Input, OnDestroy, OnInit } from '@angular/core';
 import { interval, Subscription } from 'rxjs';
-
-import { Card } from './card-hosting.component';
+import { Card } from '../models/home.models';
 
 @Component({
   selector: 'app-card',

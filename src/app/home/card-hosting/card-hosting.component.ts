@@ -1,20 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
-
-export class Card {
-  public title: string;
-  public text: string;
-  public hide: boolean;
-
-  constructor(title: string, text: string) {
-    this.title = title;
-    this.text = text;
-    this.hide = true;
-  }
-
-  toggle() {
-    this.hide = !this.hide;
-  }
-}
+import { Card } from '../models/home.models';
 
 @Component({
   selector: 'app-card-hosting',

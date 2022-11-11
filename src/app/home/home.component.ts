@@ -1,9 +1,8 @@
 import { Component, OnDestroy, OnInit } from "@angular/core";
 import { Router } from "@angular/router";
 import { Observable, Subject } from "rxjs";
-import { Card } from "./card-hosting/card-hosting.component";
 import { HomeDataService } from "./home.data.service";
-
+import { Card } from "./models/home.models";
 
 @Component({
   selector: 'home',

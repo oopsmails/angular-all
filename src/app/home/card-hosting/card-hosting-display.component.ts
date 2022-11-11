@@ -1,23 +1,8 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Observable } from 'rxjs';
 import { HomeDataService } from '../home.data.service';
 import { HOME_BACK_TO_HOME, HOME_HOME_LINK } from '../models/home.constants';
-
-export class Card {
-    public title: string;
-    public text: string;
-    public hide: boolean;
-
-    constructor(title: string, text: string) {
-        this.title = title;
-        this.text = text;
-        this.hide = true;
-    }
-
-    toggle() {
-        this.hide = !this.hide;
-    }
-}
+import { Card } from '../models/home.models';
 
 @Component({
     selector: 'app-card-hosting-display',
