@@ -7,7 +7,9 @@ import {
 
 import { renewAfterTimer } from "./renew-after-timer.observable";
 
-@Injectable()
+@Injectable({
+    providedIn: 'root',
+})
 export class SwapiService {
     private baseUrl: string = "https://swapi.dev/api"; // https://swapi.dev/api/people
     public people$: Observable<any>;

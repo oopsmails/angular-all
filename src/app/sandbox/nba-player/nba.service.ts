@@ -3,7 +3,9 @@ import { Injectable } from '@angular/core';
 import { BehaviorSubject } from 'rxjs';
 import { map, shareReplay, switchMap } from 'rxjs/operators';
 
-@Injectable()
+@Injectable({
+    providedIn: 'root',
+})
 export class NbaService {
     private _playersData$ = new BehaviorSubject<void>(undefined);
     private api = 'https://www.balldontlie.io/api/v1/'; // https://www.balldontlie.io/api/v1/players

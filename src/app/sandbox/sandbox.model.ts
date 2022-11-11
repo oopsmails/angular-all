@@ -56,11 +56,11 @@ const routes: Routes = [
         PlantFilterPipe
     ],
     providers: [
-        SandboxDataService,
-        UsStateService,
-        NbaService,
-        SwapiService,
-        OptionItemService
+        // SandboxDataService,
+        // UsStateService,
+        // NbaService,
+        // SwapiService,
+        // OptionItemService
     ]
 })
 export class SandboxModule { }
