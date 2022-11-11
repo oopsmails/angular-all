@@ -3,7 +3,9 @@ import { Injectable, OnDestroy } from "@angular/core";
 import { BehaviorSubject, of, Subject, timer } from "rxjs";
 import { map, shareReplay, switchMap, takeUntil } from "rxjs/operators";
 
-@Injectable()
+@Injectable({
+    providedIn: 'root',
+})
 export class OptionItemService implements OnDestroy {
     public optionItemsSlice = [
         { optionId: 1, optionTitle: 'option 1' },

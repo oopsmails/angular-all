@@ -4,7 +4,9 @@ import { defer, isObservable, Observable, of } from "rxjs";
 import { first, map, mergeMap, shareReplay, tap } from "rxjs/operators";
 import { OptionItem } from "src/app/shared/models/sample.model";
 
-@Injectable()
+@Injectable({
+    providedIn: 'root',
+})
 export class SandboxDataService {
     public optionItems = [
         { optionId: 1, optionTitle: 'option 1' },
