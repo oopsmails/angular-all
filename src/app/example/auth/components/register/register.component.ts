@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { select, Store } from '@ngrx/store';
 import { Observable } from 'rxjs';
+import { EXAMPLE_BACK_TO_HOME, EXAMPLE_HOME_LINK } from 'src/app/example/example.constantes';
 
 import { BackendErrorsInterface } from 'src/app/shared/types/backendErrors.interface';
 import { registerAction } from '../../store/actions/register.action';
@@ -14,6 +15,9 @@ import { RegisterRequestInterface } from '../../types/registerRequest.interface'
     styleUrls: ['./register.component.scss'],
 })
 export class RegisterComponent implements OnInit {
+    linkText = EXAMPLE_BACK_TO_HOME;
+    routerLinkInput = EXAMPLE_HOME_LINK;
+
     form: FormGroup;
     isSubmitting$: Observable<boolean>;
     backendErrors$: Observable<BackendErrorsInterface | null>;
