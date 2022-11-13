@@ -1,6 +1,6 @@
 <div class="mainContainer">
     <app-back-angle [linkText]="linkText" [routerLinkInput]="routerLinkInput"></app-back-angle>
-
+    <!-- 
     <h1>Sign In</h1>
 
     <p class="text-xs-center">
@@ -13,6 +13,7 @@
     >
     </mc-backend-error-messages>
 
+    
     <form [formGroup]="form" (ngSubmit)="onSubmit()">
         <fieldset>
             <fieldset class="form-group">
@@ -42,26 +43,49 @@
     </form>
 
     <hr />
+ -->
 
     <div class="container">
         <div class="wrapper">
             <div class="title"><span>Sign In</span></div>
+
             <form [formGroup]="form" (ngSubmit)="onSubmit()">
                 <div class="row">
                     <!-- <i class="fas fa-user"></i> -->
                     <i><fa-icon icon="envelope"></fa-icon></i>
-                    <input type="text" placeholder="Email or Phone" required />
+                    <!-- <fa-icon icon="envelope"></fa-icon> -->
+                    <input
+                        type="text"
+                        class="form-control form-control-lg"
+                        placeholder="Email"
+                        formControlName="email"
+                    />
                 </div>
                 <div class="row">
                     <!-- <i class="fas fa-lock"></i> -->
                     <i><fa-icon icon="lock"></fa-icon></i>
-                    <input type="password" placeholder="Password" required />
+                    <input
+                        type="password"
+                        class="form-control form-control-lg"
+                        placeholder="Password"
+                        formControlName="password"
+                    />
                 </div>
                 <div class="pass"><a href="#">Forgot password?</a></div>
                 <div class="row button">
-                    <input type="submit" value="Login" />
+                    <input type="submit" value="Login" [disabled]="isSubmitting$ | async" />
+                    <!-- <button
+                        class="btn btn-lg btn-primary pull-xs-right"
+                        type="submit"
+                        [disabled]="isSubmitting$ | async"
+                    >
+                        Sign in
+                    </button> -->
                 </div>
-                <div class="signup-link">Not a member? <a href="#">Signup now</a></div>
+                <!-- <div class="signup-link">Not a member? <a href="#">Signup now</a></div> -->
+                <div class="signup-link">
+                    Not a member? <a [routerLink]="['/register']">Need an account?</a>
+                </div>
             </form>
         </div>
     </div>
@@ -76,6 +100,10 @@
     <fa-icon icon="coffee"></fa-icon>
     <fa-icon icon="user"></fa-icon>
     <fa-icon icon="lock"></fa-icon>
+    <hr />
+    <div class="row">
+        <i><fa-icon icon="film"></fa-icon></i>
+    </div>
 
     <p><a routerLink="">routerLink home</a></p>
 </div>
