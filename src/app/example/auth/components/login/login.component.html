@@ -1,5 +1,6 @@
 <div class="mainContainer">
     <app-back-angle [linkText]="linkText" [routerLinkInput]="routerLinkInput"></app-back-angle>
+
     <h1>Sign In</h1>
 
     <p class="text-xs-center">
@@ -41,6 +42,40 @@
     </form>
 
     <hr />
+
+    <div class="container">
+        <div class="wrapper">
+            <div class="title"><span>Sign In</span></div>
+            <form [formGroup]="form" (ngSubmit)="onSubmit()">
+                <div class="row">
+                    <!-- <i class="fas fa-user"></i> -->
+                    <i><fa-icon icon="envelope"></fa-icon></i>
+                    <input type="text" placeholder="Email or Phone" required />
+                </div>
+                <div class="row">
+                    <!-- <i class="fas fa-lock"></i> -->
+                    <i><fa-icon icon="lock"></fa-icon></i>
+                    <input type="password" placeholder="Password" required />
+                </div>
+                <div class="pass"><a href="#">Forgot password?</a></div>
+                <div class="row button">
+                    <input type="submit" value="Login" />
+                </div>
+                <div class="signup-link">Not a member? <a href="#">Signup now</a></div>
+            </form>
+        </div>
+    </div>
+
+    <hr />
+
+    <!-- <i class="fas fa-user"><fa-icon [icon]="faUser"></fa-icon></i>
+    <fa-icon [icon]="faUser"></fa-icon> -->
+
+    <fa-icon icon="film"></fa-icon>
+    <fa-icon icon="fish"></fa-icon>
+    <fa-icon icon="coffee"></fa-icon>
+    <fa-icon icon="user"></fa-icon>
+    <fa-icon icon="lock"></fa-icon>
 
     <p><a routerLink="">routerLink home</a></p>
 </div>

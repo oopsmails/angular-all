@@ -16,6 +16,7 @@ import { RegisterEffect } from './store/effects/register.effect';
 import { UpdateCurrentUserEffect } from './store/effects/updateCurrentUser.effect';
 import { reducers } from './store/reducers';
 import { CoreModule } from 'src/app/core/core.module';
+import { SharedModule } from 'src/app/shared/shared.module';
 
 const routes = [
     {
@@ -43,6 +44,7 @@ const routes = [
         ]),
         BackendErrorMessagesModule,
         CoreModule,
+        SharedModule,
     ],
     declarations: [RegisterComponent, LoginComponent],
     providers: [AuthService, PersistanceService],

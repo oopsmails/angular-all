@@ -1,0 +1,334 @@
+<div class="mainContainer">
+    <h1>Fontawesome Test</h1>
+    <app-back-angle [linkText]="linkText" [routerLinkInput]="routerLinkInput"></app-back-angle>
+
+    <hr />
+
+    <fa-icon icon="film"></fa-icon>
+    <fa-icon icon="fish"></fa-icon>
+    <fa-icon icon="coffee"></fa-icon>
+    <fa-icon icon="user"></fa-icon>
+    <fa-icon icon="lock"></fa-icon>
+    <br />
+
+    far:
+    <fa-icon [icon]="['far', 'bell']"></fa-icon>
+    <br />
+    fas:
+    <fa-icon [icon]="['fas', 'bell']"></fa-icon>
+    <br />
+
+    <br />
+    fab:
+    <fa-icon [icon]="['fab', 'angular']"></fa-icon>
+    <fa-icon [icon]="['fab', 'twitter']"></fa-icon>
+    <fa-icon [icon]="['fab', 'facebook']"></fa-icon>
+
+    <hr />
+
+    <h1>All Examples</h1>
+
+    https://www.angularjswiki.com/angular/how-to-use-font-awesome-icons-in-angular-applications/
+
+    <h2>load film font awesome icon in component</h2>
+    <fa-icon [icon]="filmIcon"> Film </fa-icon>
+
+    <h2>using font awesome icon library</h2>
+    <fa-icon icon="film"></fa-icon><br />
+    <fa-icon icon="fish"></fa-icon>
+
+    <hr />
+
+    <h2>Font Awesome icon styles</h2>
+
+    <h3>Regular</h3>
+    <fa-icon [icon]="['far', 'bell']"></fa-icon>
+
+    <h3>Solid</h3>
+    <fa-icon [icon]="['fas', 'bell']"></fa-icon>
+
+    <h3>Brand</h3>
+
+    <fa-icon [icon]="['fab', 'angular']"></fa-icon>
+    <fa-icon [icon]="['fab', 'twitter']"></fa-icon>
+    <fa-icon [icon]="['fab', 'facebook']"></fa-icon>
+
+    <h2>Same icon from different kinds of styles</h2>
+
+    <fa-icon [icon]="['fas', 'bell']"></fa-icon>
+    <fa-icon [icon]="['far', 'bell']"></fa-icon>
+
+    <h2>Changing Icons color and stroke</h2>
+
+    <fa-icon [icon]="['fas', 'film']" [styles]="{ stroke: 'red', color: 'red' }"></fa-icon>
+
+    <h2>Changing size of icons</h2>
+
+    <div style="font-size: 15px; color: red">
+        <fa-icon [icon]="['fab', 'angular']"></fa-icon>
+        <fa-icon [icon]="['fab', 'angular']" size="xs"></fa-icon>
+        <fa-icon [icon]="['fab', 'angular']" size="sm"></fa-icon>
+        <fa-icon [icon]="['fab', 'angular']" size="lg"></fa-icon>
+        <fa-icon [icon]="['fab', 'angular']" size="2x"></fa-icon>
+        <fa-icon [icon]="['fab', 'angular']" size="3x"></fa-icon>
+        <fa-icon [icon]="['fab', 'angular']" size="5x"></fa-icon>
+        <fa-icon [icon]="['fab', 'angular']" size="6x"></fa-icon>
+        <fa-icon [icon]="['fab', 'angular']" size="7x"></fa-icon>
+        <fa-icon [icon]="['fab', 'angular']" size="10x"></fa-icon>
+    </div>
+
+    <h2>Fixed width Font Awesome icons</h2>
+
+    <div style="font-size: 5em">
+        <fa-icon class="normal" [icon]="['fab', 'android']"></fa-icon>
+        <br />
+        <fa-icon class="normal" [icon]="['fab', 'apple']"></fa-icon>
+        <br />
+        <fa-icon class="fixed" [icon]="['fab', 'android']" [fixedWidth]="true"></fa-icon>
+        <br />
+        <fa-icon class="fixed" [icon]="['fab', 'apple']" [fixedWidth]="true"></fa-icon>
+    </div>
+
+    <h2>Adding border to the font awesome icons</h2>
+    <div style="font-size: 5em">
+        <fa-icon [icon]="['fas', 'film']" [border]="true"></fa-icon>
+    </div>
+
+    <h2>Adding styles to the font awesome icons</h2>
+    <div>
+        <fa-icon
+            [icon]="['fas', 'film']"
+            [styles]="{ stroke: 'red', color: 'green', width: '100px' }"
+        ></fa-icon>
+    </div>
+
+    <hr />
+
+    <h1 style="color: red">{{ warning }}</h1>
+
+    <h2>Rotating Font Awesome icons</h2>
+    <div style="font-size: 5em">
+        <fa-icon class="normal" [icon]="['fas', 'snowboarding']"></fa-icon>
+        <fa-icon class="normal" [icon]="['fas', 'snowboarding']" [rotate]="90"></fa-icon>
+        <fa-icon class="normal" [icon]="['fas', 'snowboarding']" [rotate]="180"></fa-icon>
+        <fa-icon class="normal" [icon]="['fas', 'snowboarding']" [rotate]="270"></fa-icon>
+    </div>
+
+    <h2>Mirroring Font Awesome icons in Angular</h2>
+    <h2>Horizontal</h2>
+    <div style="font-size: 5em">
+        <fa-icon [icon]="['fas', 'snowboarding']"></fa-icon>
+        <fa-icon [icon]="['fas', 'snowboarding']" flip="horizontal"> </fa-icon>
+    </div>
+    <h2>Vertically</h2>
+    <div style="font-size: 5em">
+        <fa-icon [icon]="['fas', 'snowboarding']"></fa-icon><br />
+        <fa-icon [icon]="['fas', 'snowboarding']" flip="vertical"> </fa-icon>
+    </div>
+
+    <h2>Both Vertical and horizontal</h2>
+    <div style="font-size: 5em">
+        <fa-icon [icon]="['fas', 'snowboarding']" flip="both"></fa-icon>
+    </div>
+
+    <h2>Animating Font Awesome icons</h2>
+    <div style="font-size: 5em">
+        <fa-icon [icon]="['fas', 'fan']" [spin]="true"></fa-icon>
+        <fa-icon [icon]="['fas', 'fan']" [pulse]="true"></fa-icon>
+        <fa-icon [icon]="['fas', 'spinner']" [spin]="true"></fa-icon>
+        <fa-icon [icon]="['fas', 'spinner']" [pulse]="true"></fa-icon>
+        <fa-icon [icon]="['fas', 'sync']" [spin]="true"></fa-icon>
+        <fa-icon [icon]="['fas', 'sync']" [pulse]="true"></fa-icon>
+    </div>
+
+    <p>Click on the icon to stop and animate</p>
+    <div style="font-size: 5em">
+        <fa-icon
+            [icon]="['fas', 'volleyball-ball']"
+            [spin]="isAnimated"
+            (click)="isAnimated = !isAnimated"
+        >
+        </fa-icon>
+
+        <fa-icon [icon]="['fas', 'walking']" [spin]="isAnimated" (click)="isAnimated = !isAnimated">
+        </fa-icon>
+
+        <fa-icon [icon]="['fas', 'biking']" [spin]="isAnimated" (click)="isAnimated = !isAnimated">
+        </fa-icon>
+
+        <fa-icon
+            [icon]="['fas', 'car-crash']"
+            [spin]="isAnimated"
+            (click)="isAnimated = !isAnimated"
+        >
+        </fa-icon>
+
+        <fa-icon
+            [icon]="['fas', 'fighter-jet']"
+            [spin]="isAnimated"
+            (click)="isAnimated = !isAnimated"
+        >
+        </fa-icon>
+    </div>
+
+    <h2>Pulled Font Awesome Icons</h2>
+    <fa-icon [icon]="['fas', 'quote-left']" pull="left"></fa-icon>
+    If You Are Working On Something That You Really Care About, You Don’t Have To Be Pushed. The
+    Vision Pulls You
+    <fa-icon [icon]="['fas', 'quote-right']" pull="right"></fa-icon>
+
+    <h2>Transform Font Awesome icons</h2>
+    <p>Scaling</p>
+
+    <div class="background-div" style="font-size: 5em">
+        <fa-icon [icon]="['fas', 'snowboarding']"></fa-icon>
+        <fa-icon [icon]="['fas', 'snowboarding']" transform="shrink-5"> </fa-icon>
+        <fa-icon [icon]="['fas', 'snowboarding']" transform="grow-5"> </fa-icon>
+    </div>
+    <p>Position</p>
+
+    <div class="background-div" style="font-size: 5em">
+        <fa-icon [icon]="['fas', 'snowboarding']"></fa-icon>
+        <fa-icon [icon]="['fas', 'snowboarding']" transform="up-5"></fa-icon>
+        <fa-icon [icon]="['fas', 'snowboarding']" transform="left-5"></fa-icon>
+        <fa-icon [icon]="['fas', 'snowboarding']" transform="down-5"></fa-icon>
+        <fa-icon [icon]="['fas', 'snowboarding']" transform="right-5"></fa-icon>
+    </div>
+    <p>Postion and Scaling</p>
+    <div class="background-div" style="font-size: 5em">
+        <fa-icon [icon]="['fas', 'snowboarding']"></fa-icon>
+        <fa-icon [icon]="['fas', 'snowboarding']" transform="shrink-10 up-5"></fa-icon>
+        <fa-icon [icon]="['fas', 'snowboarding']" transform="shrink-10 down-5"></fa-icon>
+        <fa-icon [icon]="['fas', 'snowboarding']" transform="shrink-10 left-5"></fa-icon>
+        <fa-icon [icon]="['fas', 'snowboarding']" transform="shrink-10 right-5"></fa-icon>
+    </div>
+    <p>Rotate</p>
+    <div class="background-div" style="font-size: 5em">
+        <fa-icon [icon]="['fas', 'snowboarding']"></fa-icon>
+        <fa-icon [icon]="['fas', 'snowboarding']" transform="rotate-90"></fa-icon>
+        <fa-icon [icon]="['fas', 'snowboarding']" transform="rotate--90"></fa-icon>
+        <fa-icon [icon]="['fas', 'snowboarding']" transform="rotate-180"></fa-icon>
+        <fa-icon [icon]="['fas', 'snowboarding']" transform="rotate-270"></fa-icon>
+    </div>
+    <p>Jumping Horse Animation</p>
+
+    <fa-icon size="5x" [icon]="['fas', 'horse']" transform="rotate-{{ rotation }}"> </fa-icon>
+    <br />
+    <input
+        #ranger
+        type="range"
+        min="-15"
+        max="0"
+        [value]="rotation"
+        (input)="changeRotation(ranger.value)"
+    />
+
+    <h2>Combine two font awesome icons</h2>
+
+    <div style="font-size: 5em">
+        <fa-icon
+            [icon]="['fas', 'headphones']"
+            transform="shrink-6"
+            [mask]="['fas', 'square']"
+        ></fa-icon>
+        <fa-icon
+            [icon]="['fas', 'pencil-alt']"
+            transform="shrink-6"
+            [mask]="['fas', 'comment']"
+        ></fa-icon>
+    </div>
+
+    <h2>Layering font awesome icons</h2>
+
+    <div style="font-size: 5em">
+        <fa-layers>
+            <fa-icon [icon]="['fas', 'square']"></fa-icon>
+            <fa-icon [icon]="['fab', 'twitter']"></fa-icon>
+        </fa-layers>
+        <fa-layers>
+            <fa-icon [icon]="['fas', 'square']"></fa-icon>
+            <fa-icon [icon]="['fab', 'twitter']" style="color: yellow"></fa-icon>
+        </fa-layers>
+        <fa-layers>
+            <fa-icon [icon]="['fas', 'square']"></fa-icon>
+            <fa-icon [inverse]="true" [icon]="['fab', 'twitter']"></fa-icon>
+        </fa-layers>
+        <fa-layers>
+            <fa-icon [icon]="['fas', 'square']"></fa-icon>
+            <fa-icon
+                [inverse]="true"
+                [icon]="['fab', 'twitter']"
+                transform="right-1 shrink-5"
+            ></fa-icon>
+        </fa-layers>
+    </div>
+
+    <h2>combine more than two font awesome icons</h2>
+
+    <div style="font-size: 5em">
+        <fa-layers>
+            <fa-icon [icon]="['fas', 'play']" transform="rotate--90 grow-2"></fa-icon>
+            <fa-icon [inverse]="true" [icon]="['fas', 'sun']" transform="shrink-10 up-2"></fa-icon>
+            <fa-icon
+                [inverse]="true"
+                [icon]="['fas', 'moon']"
+                transform="shrink-11 down-4.2 left-4"
+            ></fa-icon>
+            <fa-icon
+                [inverse]="true"
+                [icon]="['fas', 'star']"
+                transform="shrink-11 down-4.2 right-4"
+            ></fa-icon>
+        </fa-layers>
+    </div>
+    <p>Real world examples</p>
+    <div style="font-size: 5em">
+        <fa-layers>
+            <fa-icon [icon]="['fas', 'camera']" transform="shrink-7"></fa-icon>
+            <fa-icon [icon]="['fas', 'ban']" style="color: red"></fa-icon>
+        </fa-layers>
+        <fa-layers>
+            <fa-icon [icon]="['fas', 'mobile-alt']" transform="shrink-7"></fa-icon>
+            <fa-icon [icon]="['fas', 'ban']" style="color: red"></fa-icon>
+        </fa-layers>
+    </div>
+
+    <h2>Adding text to Font Awesome icons</h2>
+
+    <div style="font-size: 5em">
+        <fa-layers>
+            <fa-icon [icon]="['fas', 'calendar']"></fa-icon>
+            <fa-layers-text
+                content="16"
+                style="color: white; font-weight: bold"
+                transform="shrink-5 down-3"
+            ></fa-layers-text>
+        </fa-layers>
+
+        <br />
+    </div>
+
+    <h2>Adding counters to Font Awesome icons</h2>
+
+    <div style="font-size: 5em">
+        <fa-layers>
+            <fa-icon [icon]="['fas', 'envelope']"></fa-icon>
+            <fa-layers-counter content="100+"></fa-layers-counter>
+        </fa-layers>
+
+        <fa-layers>
+            <fa-icon [icon]="['fas', 'bell']"></fa-icon>
+            <fa-layers-counter content="8"></fa-layers-counter>
+        </fa-layers>
+    </div>
+
+    <h2>Adding Custom classes to the font awesome icons</h2>
+
+    <fa-icon [icon]="['fas', 'film']" [classes]="['custom-icon']"></fa-icon>
+
+    <h2>Stacked font awesome icons</h2>
+    <fa-stack>
+        <fa-icon icon="circle" stackItemSize="2x"></fa-icon>
+        <fa-icon icon="flag" [inverse]="true" stackItemSize="1x"></fa-icon>
+    </fa-stack>
+</div>
