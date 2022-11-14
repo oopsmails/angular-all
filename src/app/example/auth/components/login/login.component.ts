@@ -18,7 +18,7 @@ export class LoginComponent implements OnInit {
   linkText = EXAMPLE_BACK_TO_HOME;
   routerLinkInput = EXAMPLE_HOME_LINK;
 
-  form: FormGroup;
+  loginForm: FormGroup;
   isSubmitting$: Observable<boolean>;
   backendErrors$: Observable<BackendErrorsInterface | null>;
 
@@ -43,15 +43,16 @@ export class LoginComponent implements OnInit {
   }
 
   initializeForm(): void {
-    this.form = this.fb.group({
+    this.loginForm = this.fb.group({
       email: ['', Validators.required],
+      // email: ['', Validators.required, Validators.email],
       password: ['', Validators.required],
     });
   }
 
   onSubmit(): void {
     const request: LoginRequestInterface = {
-      user: this.form.value,
+      user: this.loginForm.value,
     };
     this.store.dispatch(loginAction({ request }));
   }

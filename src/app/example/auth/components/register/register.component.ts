@@ -10,44 +10,44 @@ import { isSubmittingSelector, validationErrorsSelector } from '../../store/sele
 import { RegisterRequestInterface } from '../../types/registerRequest.interface';
 
 @Component({
-    selector: 'mc-register',
-    templateUrl: './register.component.html',
-    styleUrls: ['./register.component.scss'],
+  selector: 'mc-register',
+  templateUrl: './register.component.html',
+  styleUrls: ['./register.component.scss'],
 })
 export class RegisterComponent implements OnInit {
-    linkText = EXAMPLE_BACK_TO_HOME;
-    routerLinkInput = EXAMPLE_HOME_LINK;
+  linkText = EXAMPLE_BACK_TO_HOME;
+  routerLinkInput = EXAMPLE_HOME_LINK;
 
-    form: FormGroup;
-    isSubmitting$: Observable<boolean>;
-    backendErrors$: Observable<BackendErrorsInterface | null>;
+  registerForm: FormGroup;
+  isSubmitting$: Observable<boolean>;
+  backendErrors$: Observable<BackendErrorsInterface | null>;
 
-    constructor(private fb: FormBuilder, private store: Store) {}
+  constructor(private fb: FormBuilder, private store: Store) {}
 
-    ngOnInit(): void {
-        this.initializeForm();
-        this.initializeValues();
-    }
+  ngOnInit(): void {
+    this.initializeForm();
+    this.initializeValues();
+  }
 
-    initializeValues(): void {
-        this.isSubmitting$ = this.store.pipe(select(isSubmittingSelector));
-        this.backendErrors$ = this.store.pipe(select(validationErrorsSelector));
-    }
+  initializeValues(): void {
+    this.isSubmitting$ = this.store.pipe(select(isSubmittingSelector));
+    this.backendErrors$ = this.store.pipe(select(validationErrorsSelector));
+  }
 
-    initializeForm(): void {
-        console.log('initializeForm');
-        this.form = this.fb.group({
-            username: ['', Validators.required],
-            email: ['', Validators.required],
-            password: ['', Validators.required],
-        });
-    }
+  initializeForm(): void {
+    console.log('initializeForm');
+    this.registerForm = this.fb.group({
+      username: ['', Validators.required],
+      email: ['', Validators.required],
+      password: ['', Validators.required],
+    });
+  }
 
-    onSubmit(): void {
-        console.log('submit', this.form.value, this.form.valid);
-        const request: RegisterRequestInterface = {
-            user: this.form.value,
-        };
-        this.store.dispatch(registerAction({ request }));
-    }
+  onSubmit(): void {
+    console.log('submit', this.registerForm.value, this.registerForm.valid);
+    const request: RegisterRequestInterface = {
+      user: this.registerForm.value,
+    };
+    this.store.dispatch(registerAction({ request }));
+  }
 }
