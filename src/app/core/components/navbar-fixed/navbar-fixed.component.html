@@ -1,16 +1,21 @@
 <div class="header-div">
   <a routerLink="" class="logo">LOGO</a>
 
-  <input type="checkbox" id="menu-bar" #menubar>
-  <label for="menu-bar">Menu</label>
+  <input type="checkbox" id="menu-bar" #menubar />
+  <!-- <label for="menu-bar">Menu</label> -->
+  <label for="menu-bar" class="nav-toggle-label">
+    <!-- <span>X</span> -->
+    <span></span>
+  </label>
 
   <nav class="navbar" #navbar>
     <ul>
-      <li><a routerLink="/home">Home
-          <span class="badge-num">
-            0
-          </span>
-        </a></li>
+      <li>
+        <a routerLink="/home"
+          >Home
+          <span class="badge-num"> 0 </span>
+        </a>
+      </li>
       <li><a routerLink="/example/home">Example</a></li>
       <li><a routerLink="/store/home">NgrxStore</a></li>
       <li><a routerLink="/sandbox/home">Sandbox</a></li>
@@ -26,7 +31,6 @@
           <li><a routerLink="sandbox/search-state">Search US States</a></li>
         </ul>
       </li>
-
     </ul>
   </nav>
 </div>
