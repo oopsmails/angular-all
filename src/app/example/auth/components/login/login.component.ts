@@ -1,3 +1,4 @@
+import { OnDestroy } from '@angular/core';
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { select, Store } from '@ngrx/store';
@@ -14,7 +15,7 @@ import { LoginRequestInterface } from '../../types/loginRequest.interface';
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.scss'],
 })
-export class LoginComponent implements OnInit {
+export class LoginComponent implements OnInit, OnDestroy {
   linkText = EXAMPLE_BACK_TO_HOME;
   routerLinkInput = EXAMPLE_HOME_LINK;
 
@@ -55,5 +56,9 @@ export class LoginComponent implements OnInit {
       user: this.loginForm.value,
     };
     this.store.dispatch(loginAction({ request }));
+  }
+
+  ngOnDestroy(): void {
+    console.log('LoginComponent, ngOnDestroy ... should clean up errors if any ....');
   }
 }
