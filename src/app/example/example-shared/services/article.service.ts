@@ -5,7 +5,7 @@ import { map } from 'rxjs/operators';
 
 import { environment } from 'src/environments/environment';
 import { GetArticleResponseInterface } from 'src/app/shared/types/getArticleResponse.interface';
-import { ArticleInterface } from '../types/article.interface';
+import { ArticleInterface } from '../../../shared/types/article.interface';
 
 @Injectable()
 export class ArticleService {
