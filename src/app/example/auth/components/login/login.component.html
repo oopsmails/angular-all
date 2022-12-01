@@ -17,11 +17,32 @@
         </mc-backend-error-messages>
       </div>
 
-      <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+      <form [formGroup]="loginFormGroup" (ngSubmit)="onSubmit()">
         <fieldset class="form-field-set">
           <div class="form-group-row">
             <i><fa-icon icon="envelope"></fa-icon></i>
             <input type="text" placeholder="Email" formControlName="email" />
+
+            <div *ngIf="submitted && f['email'].errors" class="invalid-feedback">
+              <div *ngIf="f['email'].errors['required']">Email is required</div>
+            </div>
+
+            <!-- <div
+              *ngIf="
+              loginFormGroup.controls['email'].errors?.['required'] &&
+              loginFormGroup.controls['email'].errors?.['touched']
+              "
+            >
+              Email is required
+            </div>
+            <div
+              *ngIf="
+              loginFormGroup.controls['email'].errors?.['Pattern'] &&
+              loginFormGroup.controls['email'].errors?.['touched']
+              "
+            >
+              Invalid Pattern
+            </div> -->
           </div>
         </fieldset>
         <fieldset class="form-field-set">

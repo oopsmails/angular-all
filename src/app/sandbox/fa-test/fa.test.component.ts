@@ -5,41 +5,41 @@ import { Subject } from 'rxjs';
 import { SANDBOX_BACK_TO_HOME, SANDBOX_HOME_LINK } from '../models/sandbox.constants';
 
 @Component({
-    selector: 'app-sandbox-home',
-    templateUrl: './fa.test.component.html',
-    styleUrls: ['./fa.test.component.scss'],
+  selector: 'app-fa-test',
+  templateUrl: './fa.test.component.html',
+  styleUrls: ['./fa.test.component.scss'],
 })
 export class FaTestComponent implements OnInit, OnDestroy {
-    private onDestory$: Subject<boolean> = new Subject();
+  private onDestory$: Subject<boolean> = new Subject();
 
-    linkText = SANDBOX_BACK_TO_HOME;
-    routerLinkInput = SANDBOX_HOME_LINK;
+  linkText = SANDBOX_BACK_TO_HOME;
+  routerLinkInput = SANDBOX_HOME_LINK;
 
-    warning =
-        'To make below all working, need to add library.addIconPacks(fas, far, fab); in shared.module.ts. \n This will make project size much bigger!!!';
+  warning =
+    'To make below all working, need to add library.addIconPacks(fas, far, fab); in shared.module.ts. \n This will make project size much bigger!!!';
 
-    filmIcon = faFilm;
+  filmIcon = faFilm;
 
-    rotate90 = 90;
-    rotate180 = 180;
-    rotate270 = 270;
+  rotate90 = 90;
+  rotate180 = 180;
+  rotate270 = 270;
 
-    rotation = -15;
+  rotation = -15;
 
-    isAnimated = true;
-    // pullLeft = 'left' as PullProp;
-    // pullRight = 'right' as PullProp;
+  isAnimated = true;
+  // pullLeft = 'left' as PullProp;
+  // pullRight = 'right' as PullProp;
 
-    constructor(private router: Router) {}
+  constructor(private router: Router) {}
 
-    ngOnInit() {}
+  ngOnInit() {}
 
-    changeRotation(value) {
-        this.rotation = value;
-    }
+  changeRotation(value) {
+    this.rotation = value;
+  }
 
-    ngOnDestroy() {
-        this.onDestory$.next(true);
-        this.onDestory$.complete();
-    }
+  ngOnDestroy() {
+    this.onDestory$.next(true);
+    this.onDestory$.complete();
+  }
 }
