@@ -7,6 +7,7 @@ import { EXAMPLE_BACK_TO_HOME, EXAMPLE_HOME_LINK } from 'src/app/example/example
 
 import { BackendErrorsInterface } from 'src/app/shared/types/backendErrors.interface';
 import { loginAction } from '../../store/actions/login.action';
+import { cleanValidationErrorAction } from '../../store/actions/sync.action';
 import { isSubmittingSelector, validationErrorsSelector } from '../../store/selectors';
 import { LoginRequestInterface } from '../../types/loginRequest.interface';
 
@@ -60,5 +61,6 @@ export class LoginComponent implements OnInit, OnDestroy {
 
   ngOnDestroy(): void {
     console.log('LoginComponent, ngOnDestroy ... should clean up errors if any ....');
+    this.store.dispatch(cleanValidationErrorAction());
   }
 }
