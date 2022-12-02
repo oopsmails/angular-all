@@ -99,3 +99,11 @@ form .form-group-row input:focus {
 form .form-group-row input::placeholder {
     color: #999;
 }
+
+.invalid-feedback {
+    display: inline;
+    width: 100%;
+    margin-top: .25rem;
+    font-size: 80%;
+    color: rgb(229, 17, 17);
+}
