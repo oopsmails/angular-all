@@ -23,6 +23,7 @@ import { OptionItemService } from './option-item/option.item.service';
 import { OptionItemComponent } from './option-item/option.item.component';
 import { FaTestComponent } from './fa-test/fa.test.component';
 import { FormValidationComponent } from './form-validation/form.validaton.component';
+import { CustomerSearchComponent } from './customer-seach/customer-search.component';
 
 const routes: Routes = [
   { path: 'sandbox/home', component: SandboxHomeComponent },
@@ -35,6 +36,7 @@ const routes: Routes = [
   { path: 'sandbox/option-item', component: OptionItemComponent },
   { path: 'sandbox/fa-test', component: FaTestComponent },
   { path: 'sandbox/form-validation', component: FormValidationComponent },
+  { path: 'sandbox/customer-search', component: CustomerSearchComponent },
 ];
 
 @NgModule({
@@ -58,6 +60,7 @@ const routes: Routes = [
     OptionItemComponent,
     FaTestComponent,
     FormValidationComponent,
+    CustomerSearchComponent,
     CityFilterPipe,
     PlantFilterPipe,
   ],
