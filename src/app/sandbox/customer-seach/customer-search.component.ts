@@ -1,4 +1,4 @@
-import { Component, OnDestroy, OnInit } from '@angular/core';
+import { Component, OnDestroy, OnInit, ViewEncapsulation } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
 import { Subject } from 'rxjs';
 import { switchMap, map, debounceTime, distinctUntilChanged, takeUntil } from 'rxjs/operators';
@@ -9,6 +9,7 @@ import { CustomersService } from './customers.service';
   selector: 'app-customer-search',
   templateUrl: './customer-search.component.html',
   styleUrls: ['./customer-search.component.scss'],
+  encapsulation: ViewEncapsulation.ShadowDom,
 })
 export class CustomerSearchComponent implements OnInit, OnDestroy {
   // export class CustomerSearchComponent extends BootstrapBaseComponent implements OnInit, OnDestroy {

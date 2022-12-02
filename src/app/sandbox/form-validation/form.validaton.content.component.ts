@@ -7,11 +7,14 @@ import { SANDBOX_BACK_TO_HOME, SANDBOX_HOME_LINK } from '../models/sandbox.const
 import Validation from './validation';
 
 @Component({
-  selector: 'app-form-validation',
-  templateUrl: './form.validaton.component.html',
-  styleUrls: ['./form.validaton.component.scss'],
+  selector: 'app-form-validation-content',
+  templateUrl: './form.validaton.content.component.html',
+  styleUrls: ['./form.validaton.content.component.scss'],
+  // encapsulation: ViewEncapsulation.None,
+  encapsulation: ViewEncapsulation.ShadowDom,
+  // encapsulation: ViewEncapsulation.Emulated,
 })
-export class FormValidationComponent implements OnInit, OnDestroy {
+export class FormValidationContentComponent implements OnInit, OnDestroy {
   private onDestory$: Subject<boolean> = new Subject();
 
   linkText = SANDBOX_BACK_TO_HOME;
