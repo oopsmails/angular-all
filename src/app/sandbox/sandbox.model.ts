@@ -24,6 +24,8 @@ import { OptionItemComponent } from './option-item/option.item.component';
 import { FaTestComponent } from './fa-test/fa.test.component';
 import { FormValidationComponent } from './form-validation/form.validaton.component';
 import { CustomerSearchComponent } from './customer-seach/customer-search.component';
+import { TooltipModule } from 'ngx-bootstrap/tooltip';
+import { FormValidationContentComponent } from './form-validation/form.validaton.content.component';
 
 const routes: Routes = [
   { path: 'sandbox/home', component: SandboxHomeComponent },
@@ -46,6 +48,7 @@ const routes: Routes = [
     HttpClientModule,
     SharedModule,
     CoreModule,
+    TooltipModule.forRoot(),
     TranslateModule.forRoot(),
     RouterModule.forChild(routes),
   ],
@@ -60,6 +63,7 @@ const routes: Routes = [
     OptionItemComponent,
     FaTestComponent,
     FormValidationComponent,
+    FormValidationContentComponent,
     CustomerSearchComponent,
     CityFilterPipe,
     PlantFilterPipe,
