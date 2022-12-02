@@ -2,6 +2,9 @@
 // @import "../../auth.module.scss";
 // @import '_variables';
 
+// $sign-color: #333;
+$sign-color: #fff;
+
 .container {
     max-width: 700px;
     padding: 0 20px;
@@ -19,7 +22,7 @@
     height: 70px;
     background: var(--primary-color);
     border-radius: 5px 5px 0 0;
-    color: #fff;
+    color: $sign-color;
     font-size: 30px;
     font-weight: 600;
     display: flex;
@@ -28,7 +31,7 @@
 }
 
 .wrapper .needaccount {
-    color: #fff;
+    color: $sign-color;
     font-size: 1em;
     font-weight: 600;
     padding: 5px 10px 0px var(--auth-form-padding-left);
@@ -68,7 +71,7 @@
     position: absolute;
     height: 100%;
     width: 47px;
-    color: #fff;
+    color: $sign-color;
     font-size: 25px;
     background: var(--primary-color);
     border: 1px solid var(--primary-color);
@@ -79,7 +82,7 @@
 }
 
 .wrapper form .login-button input {
-    color: #fff;
+    color: $sign-color;
     font-size: 20px;
     font-weight: 500;
     padding-left: 0px;
@@ -95,4 +98,12 @@ form .form-group-row input:focus {
 
 form .form-group-row input::placeholder {
     color: #999;
+}
+
+.invalid-feedback {
+    display: inline;
+    width: 100%;
+    margin-top: .25rem;
+    font-size: 80%;
+    color: rgb(229, 17, 17);
 }

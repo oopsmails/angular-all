@@ -12,23 +12,23 @@ import { ExampleHomeComponent } from './example.home.component';
 import { GlobalFeedModule } from './globalFeed/globalFeed.module';
 
 const routes: Routes = [
-    { path: 'example/home', component: ExampleHomeComponent },
-    { path: 'example/login', component: LoginComponent },
+  { path: 'example/home', component: ExampleHomeComponent },
+  { path: 'example/login', component: LoginComponent },
 ];
 
 @NgModule({
-    imports: [
-        CommonModule,
-        BrowserModule,
-        HttpClientModule,
-        SharedModule,
-        CoreModule,
-        TranslateModule.forRoot(),
-        RouterModule.forChild(routes),
-        AuthModule,
-        GlobalFeedModule,
-    ],
-    declarations: [ExampleHomeComponent],
-    providers: [],
+  imports: [
+    CommonModule,
+    BrowserModule,
+    HttpClientModule,
+    SharedModule,
+    CoreModule,
+    TranslateModule.forRoot(),
+    RouterModule.forChild(routes),
+    AuthModule,
+    GlobalFeedModule,
+  ],
+  declarations: [ExampleHomeComponent],
+  providers: [],
 })
 export class ExampleModule {}

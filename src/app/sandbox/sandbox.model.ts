@@ -22,48 +22,51 @@ import { SwapiService } from './swapi/swapi.service';
 import { OptionItemService } from './option-item/option.item.service';
 import { OptionItemComponent } from './option-item/option.item.component';
 import { FaTestComponent } from './fa-test/fa.test.component';
+import { FormValidationComponent } from './form-validation/form.validaton.component';
 
 const routes: Routes = [
-    { path: 'sandbox/home', component: SandboxHomeComponent },
-    { path: 'sandbox/us-state', component: UsStateComponent },
-    { path: 'sandbox/search-city', component: SearchCityComponent },
-    { path: 'sandbox/search-plant', component: SearchPlantComponent },
-    { path: 'sandbox/search-state', component: SearchStateComponent },
-    { path: 'sandbox/nba-player', component: NbaPlayerComponent },
-    { path: 'sandbox/swapi', component: SwapiComponent },
-    { path: 'sandbox/option-item', component: OptionItemComponent },
-    { path: 'sandbox/fa-test', component: FaTestComponent },
+  { path: 'sandbox/home', component: SandboxHomeComponent },
+  { path: 'sandbox/us-state', component: UsStateComponent },
+  { path: 'sandbox/search-city', component: SearchCityComponent },
+  { path: 'sandbox/search-plant', component: SearchPlantComponent },
+  { path: 'sandbox/search-state', component: SearchStateComponent },
+  { path: 'sandbox/nba-player', component: NbaPlayerComponent },
+  { path: 'sandbox/swapi', component: SwapiComponent },
+  { path: 'sandbox/option-item', component: OptionItemComponent },
+  { path: 'sandbox/fa-test', component: FaTestComponent },
+  { path: 'sandbox/form-validation', component: FormValidationComponent },
 ];
 
 @NgModule({
-    imports: [
-        CommonModule,
-        BrowserModule,
-        HttpClientModule,
-        SharedModule,
-        CoreModule,
-        TranslateModule.forRoot(),
-        RouterModule.forChild(routes),
-    ],
-    declarations: [
-        SandboxHomeComponent,
-        SearchCityComponent,
-        SearchPlantComponent,
-        SearchStateComponent,
-        UsStateComponent,
-        NbaPlayerComponent,
-        SwapiComponent,
-        OptionItemComponent,
-        FaTestComponent,
-        CityFilterPipe,
-        PlantFilterPipe,
-    ],
-    providers: [
-        // SandboxDataService,
-        // UsStateService,
-        // NbaService,
-        // SwapiService,
-        // OptionItemService
-    ],
+  imports: [
+    CommonModule,
+    BrowserModule,
+    HttpClientModule,
+    SharedModule,
+    CoreModule,
+    TranslateModule.forRoot(),
+    RouterModule.forChild(routes),
+  ],
+  declarations: [
+    SandboxHomeComponent,
+    SearchCityComponent,
+    SearchPlantComponent,
+    SearchStateComponent,
+    UsStateComponent,
+    NbaPlayerComponent,
+    SwapiComponent,
+    OptionItemComponent,
+    FaTestComponent,
+    FormValidationComponent,
+    CityFilterPipe,
+    PlantFilterPipe,
+  ],
+  providers: [
+    // SandboxDataService,
+    // UsStateService,
+    // NbaService,
+    // SwapiService,
+    // OptionItemService
+  ],
 })
 export class SandboxModule {}

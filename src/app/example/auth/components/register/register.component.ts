@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, OnDestroy } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { select, Store } from '@ngrx/store';
 import { Observable } from 'rxjs';
@@ -6,6 +6,7 @@ import { EXAMPLE_BACK_TO_HOME, EXAMPLE_HOME_LINK } from 'src/app/example/example
 
 import { BackendErrorsInterface } from 'src/app/shared/types/backendErrors.interface';
 import { registerAction } from '../../store/actions/register.action';
+import { cleanValidationErrorAction } from '../../store/actions/sync.action';
 import { isSubmittingSelector, validationErrorsSelector } from '../../store/selectors';
 import { RegisterRequestInterface } from '../../types/registerRequest.interface';
 
@@ -14,7 +15,7 @@ import { RegisterRequestInterface } from '../../types/registerRequest.interface'
   templateUrl: './register.component.html',
   styleUrls: ['./register.component.scss'],
 })
-export class RegisterComponent implements OnInit {
+export class RegisterComponent implements OnInit, OnDestroy {
   linkText = EXAMPLE_BACK_TO_HOME;
   routerLinkInput = EXAMPLE_HOME_LINK;
 
@@ -49,5 +50,10 @@ export class RegisterComponent implements OnInit {
       user: this.registerForm.value,
     };
     this.store.dispatch(registerAction({ request }));
+  }
+
+  ngOnDestroy(): void {
+    console.log('RegisterComponent, ngOnDestroy ... should clean up errors if any ....');
+    this.store.dispatch(cleanValidationErrorAction());
   }
 }
