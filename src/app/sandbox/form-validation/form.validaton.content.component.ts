@@ -9,7 +9,7 @@ import Validation from './validation';
 @Component({
   selector: 'app-form-validation-content',
   templateUrl: './form.validaton.content.component.html',
-  styleUrls: ['./form.validaton.content.component.scss'],
+  styleUrls: ['./form.validaton.content.component.scss', '../../../assets/scss/bootstrap.min.css'],
   // encapsulation: ViewEncapsulation.None,
   encapsulation: ViewEncapsulation.ShadowDom,
   // encapsulation: ViewEncapsulation.Emulated,
