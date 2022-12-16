@@ -28,7 +28,7 @@ import { TooltipModule } from 'ngx-bootstrap/tooltip';
 import { FormValidationContentComponent } from './form-validation/form.validaton.content.component';
 import { TypeaheadModule } from 'ngx-bootstrap/typeahead';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { NgxbTypeaheadPreviewComponent } from './ngxb/typeahead-preview/ngxb.typeahead.preview';
+import { NgxbTypeaheadPreviewComponent } from './ngxb/ngxb-typeahead-preview/ngxb.typeahead.preview';
 
 const routes: Routes = [
   { path: 'sandbox/home', component: SandboxHomeComponent },
