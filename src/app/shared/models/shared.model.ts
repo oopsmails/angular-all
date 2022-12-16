@@ -29,7 +29,7 @@ export interface GitHubUser {
 // }
 
 export interface UsState {
-  id: number;
+  id?: number;
   stateName: string;
   // name: string;
   flag_img?: string;
