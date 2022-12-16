@@ -1,4 +1,3 @@
-
 import { HttpClientModule } from '@angular/common/http';
 import { NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
@@ -14,11 +13,8 @@ import { SandboxModule } from './sandbox/sandbox.model';
 import { SharedModule } from './shared/shared.module';
 import { StorePocModule } from './store-poc/store.poc.module';
 
-
 @NgModule({
-  declarations: [
-    AppComponent
-  ],
+  declarations: [AppComponent],
   imports: [
     BrowserModule,
     FormsModule,
@@ -31,11 +27,9 @@ import { StorePocModule } from './store-poc/store.poc.module';
     ExampleModule,
     SandboxModule,
     StorePocModule, // has to before AppRoutingModule
-    AppRoutingModule
+    AppRoutingModule,
   ],
-  providers: [
-    AppInitService
-  ],
-  bootstrap: [AppComponent]
+  providers: [AppInitService],
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}

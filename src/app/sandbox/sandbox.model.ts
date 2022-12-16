@@ -26,6 +26,9 @@ import { FormValidationComponent } from './form-validation/form.validaton.compon
 import { CustomerSearchComponent } from './customer-seach/customer-search.component';
 import { TooltipModule } from 'ngx-bootstrap/tooltip';
 import { FormValidationContentComponent } from './form-validation/form.validaton.content.component';
+import { TypeaheadModule } from 'ngx-bootstrap/typeahead';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { NgxbTypeaheadPreviewComponent } from './ngxb/typeahead-preview/ngxb.typeahead.preview';
 
 const routes: Routes = [
   { path: 'sandbox/home', component: SandboxHomeComponent },
@@ -39,6 +42,7 @@ const routes: Routes = [
   { path: 'sandbox/fa-test', component: FaTestComponent },
   { path: 'sandbox/form-validation', component: FormValidationComponent },
   { path: 'sandbox/customer-search', component: CustomerSearchComponent },
+  { path: 'sandbox/ngxb-typeahead-preview', component: NgxbTypeaheadPreviewComponent },
 ];
 
 @NgModule({
@@ -46,9 +50,11 @@ const routes: Routes = [
     CommonModule,
     BrowserModule,
     HttpClientModule,
+    BrowserAnimationsModule,
     SharedModule,
     CoreModule,
     TooltipModule.forRoot(),
+    TypeaheadModule.forRoot(),
     TranslateModule.forRoot(),
     RouterModule.forChild(routes),
   ],
@@ -67,6 +73,7 @@ const routes: Routes = [
     CustomerSearchComponent,
     CityFilterPipe,
     PlantFilterPipe,
+    NgxbTypeaheadPreviewComponent,
   ],
   providers: [
     // SandboxDataService,

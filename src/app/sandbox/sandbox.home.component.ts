@@ -1,23 +1,18 @@
-import { Component, OnDestroy, OnInit } from "@angular/core";
-import { Router } from "@angular/router";
-import { Subject } from "rxjs";
-
+import { Component, OnDestroy, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { Subject } from 'rxjs';
 
 @Component({
   selector: 'app-sandbox-home',
   templateUrl: './sandbox.home.component.html',
-  styleUrls: ['./sandbox.home.component.scss']
+  styleUrls: ['./sandbox.home.component.scss'],
 })
 export class SandboxHomeComponent implements OnInit, OnDestroy {
-  private onDestory$: Subject<boolean> = new Subject();
+  private onDestroy$: Subject<boolean> = new Subject();
 
-  constructor(
-    private router: Router
-  ) { }
+  constructor(private router: Router) {}
 
-  ngOnInit() {
-
-  }
+  ngOnInit() {}
 
   navToPage(page) {
     console.log('HomeComponent, navToPage, page = ' + page);
@@ -25,7 +20,7 @@ export class SandboxHomeComponent implements OnInit, OnDestroy {
   }
 
   ngOnDestroy() {
-    this.onDestory$.next(true);
-    this.onDestory$.complete();
+    this.onDestroy$.next(true);
+    this.onDestroy$.complete();
   }
 }

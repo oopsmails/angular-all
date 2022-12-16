@@ -7,7 +7,7 @@ import { fromEvent, Subject, Subscription } from 'rxjs';
 @Component({
   selector: 'navbar-fixed',
   templateUrl: './navbar-fixed.component.html',
-  styleUrls: ['./navbar-fixed.component.scss']
+  styleUrls: ['./navbar-fixed.component.scss'],
 })
 export class NavbarFixedComponent implements OnInit, AfterViewInit, OnDestroy {
   @ViewChild('navbar') navbarElementRef: ElementRef;
@@ -16,29 +16,26 @@ export class NavbarFixedComponent implements OnInit, AfterViewInit, OnDestroy {
   faAngleDown = faAngleDown;
   // navbarClick: Subscription; // old way to unsubscribe
 
-  private onDestory$: Subject<boolean> = new Subject();
-  
-  constructor() { }
+  private onDestroy$: Subject<boolean> = new Subject();
 
-  ngOnInit() {
+  constructor() {}
 
-  }
+  ngOnInit() {}
 
   ngAfterViewInit(): void {
     // this.navbarClick = fromEvent(this.navbarElementRef.nativeElement, 'click').subscribe(
-    fromEvent(this.navbarElementRef.nativeElement, 'click').pipe(takeUntil(this.onDestory$)).subscribe(
-      (x) => {
+    fromEvent(this.navbarElementRef.nativeElement, 'click')
+      .pipe(takeUntil(this.onDestroy$))
+      .subscribe((x) => {
         // console.log("NavbarFixedComponent, ngAfterViewInit ... ", x);
         this.menubarElementRef.nativeElement?.click();
-      }
-    );
+      });
   }
 
   ngOnDestroy() {
     // this.navbarClick.unsubscribe(); // this is old way without takeUntil
 
-    this.onDestory$.next(true);
-    this.onDestory$.complete();
+    this.onDestroy$.next(true);
+    this.onDestroy$.complete();
   }
-
 }

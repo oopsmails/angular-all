@@ -1,23 +1,20 @@
-import { Component, OnDestroy, OnInit } from "@angular/core";
-import { Router } from "@angular/router";
-import { Observable, Subject } from "rxjs";
-import { HomeDataService } from "./home.data.service";
-import { Card } from "./models/home.models";
+import { Component, OnDestroy, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { Observable, Subject } from 'rxjs';
+import { HomeDataService } from './home.data.service';
+import { Card } from './models/home.models';
 
 @Component({
   selector: 'home',
   templateUrl: './home.component.html',
-  styleUrls: ['./home.component.scss']
+  styleUrls: ['./home.component.scss'],
 })
 export class HomeComponent implements OnInit, OnDestroy {
-  private onDestory$: Subject<boolean> = new Subject();
+  private onDestroy$: Subject<boolean> = new Subject();
 
   cards$: Observable<Card[]>;
 
-  constructor(
-    private router: Router
-    , private homeDataService: HomeDataService
-  ) { }
+  constructor(private router: Router, private homeDataService: HomeDataService) {}
 
   ngOnInit() {
     this.cards$ = this.homeDataService.getCards();
@@ -29,7 +26,7 @@ export class HomeComponent implements OnInit, OnDestroy {
   }
 
   ngOnDestroy() {
-    this.onDestory$.next(true);
-    this.onDestory$.complete();
+    this.onDestroy$.next(true);
+    this.onDestroy$.complete();
   }
 }

@@ -2,28 +2,27 @@
 <h2>ChangeDetectionStrategy.OnPush in Component??</h2>
 <h2>Not using "cache" in UsStateService</h2>
 
-<app-back-angle [linkText]=linkText [routerLinkInput]=routerLinkInput></app-back-angle>
+<app-back-angle [linkText]="linkText" [routerLinkInput]="routerLinkInput"></app-back-angle>
 
 <div class="searcTexthDiv">
-    <img src="../assets/Group%201.png" width="18px" class="search">
-    <input type="text" #search [(ngModel)]=searchName placeholder="Find state">
+  <img src="../assets/Group%201.png" width="18px" class="search" />
+  <input type="text" #search [(ngModel)]="searchName" placeholder="Find state" />
 </div>
 <table class="table table-bordered">
-    <thead>
-        <tr>
-            <th>id</th>
-            <th>text</th>
-        </tr>
-    </thead>
-    <tbody>
-        <tr *ngFor="let state of states$ | async">
-            <td>{{ state.id }}</td>
-            <!-- <td>{{ state.stateName }}</td> -->
-            <td><div [innerHtml]="state.stateName| highlighter:searchName:'partial'"></div></td>
-        </tr>
-    </tbody>
+  <thead>
+    <tr>
+      <th>id</th>
+      <th>text</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let state of states$ | async">
+      <td>{{ state.id }}</td>
+      <!-- <td>{{ state.stateName }}</td> -->
+      <td><div [innerHtml]="state.stateName | highlighter : searchName : 'partial'"></div></td>
+    </tr>
+  </tbody>
 </table>
 
 <h2>All State List: (There is a mock delay in DataService)</h2>
-<div *ngFor="let item of allStatesDelay$ | async">{{ item.id }} - {{ item.stateName}}</div>
-
+<div *ngFor="let item of allStatesDelay$ | async">{{ item.id }} - {{ item.stateName }}</div>

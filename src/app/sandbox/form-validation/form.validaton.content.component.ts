@@ -15,7 +15,7 @@ import Validation from './validation';
   // encapsulation: ViewEncapsulation.Emulated,
 })
 export class FormValidationContentComponent implements OnInit, OnDestroy {
-  private onDestory$: Subject<boolean> = new Subject();
+  private onDestroy$: Subject<boolean> = new Subject();
 
   linkText = SANDBOX_BACK_TO_HOME;
   routerLinkInput = SANDBOX_HOME_LINK;
@@ -68,7 +68,7 @@ export class FormValidationContentComponent implements OnInit, OnDestroy {
   }
 
   ngOnDestroy() {
-    this.onDestory$.next(true);
-    this.onDestory$.complete();
+    this.onDestroy$.next(true);
+    this.onDestroy$.complete();
   }
 }
