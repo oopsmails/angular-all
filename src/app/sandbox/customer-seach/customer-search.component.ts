@@ -1,19 +1,24 @@
 import { Component, OnDestroy, OnInit, ViewEncapsulation } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
+import { ActivatedRoute, Router } from '@angular/router';
+import { faAngleLeft } from '@fortawesome/free-solid-svg-icons';
 import { Subject } from 'rxjs';
 import { switchMap, map, debounceTime, distinctUntilChanged, takeUntil } from 'rxjs/operators';
+import { SANDBOX_BACK_TO_HOME, SANDBOX_HOME_LINK } from '../models/sandbox.constants';
 import { Customer } from './customer.model';
 import { CustomersService } from './customers.service';
 
 @Component({
   selector: 'app-customer-search',
   templateUrl: './customer-search.component.html',
-  styleUrls: ['./customer-search.component.scss'],
-  encapsulation: ViewEncapsulation.ShadowDom,
+  styleUrls: ['./customer-search.component.scss', '../../../assets/scss/bootstrap.min.css'],
+  // encapsulation: ViewEncapsulation.ShadowDom,
 })
 export class CustomerSearchComponent implements OnInit, OnDestroy {
   // export class CustomerSearchComponent extends BootstrapBaseComponent implements OnInit, OnDestroy {
   title = 'switchMap-example';
+  linkText = SANDBOX_BACK_TO_HOME;
+  routerLinkInput = SANDBOX_HOME_LINK;
 
   customerFormGroup: FormGroup;
   customer: Customer;
@@ -24,7 +29,14 @@ export class CustomerSearchComponent implements OnInit, OnDestroy {
   private customerLookup$: Subject<void> = new Subject();
   private distroyed$: Subject<boolean> = new Subject();
 
-  constructor(private fb: FormBuilder, private customersService: CustomersService) {
+  faAngleLeft = faAngleLeft;
+
+  constructor(
+    private fb: FormBuilder,
+    private customersService: CustomersService,
+    private route: ActivatedRoute,
+    private router: Router
+  ) {
     // super();
   }
 
@@ -74,6 +86,11 @@ export class CustomerSearchComponent implements OnInit, OnDestroy {
   //     this.requestsWithoutSwitchmap.shift();
   //   });
   // }
+
+  navTo() {
+    console.log(this.routerLinkInput, this.linkText);
+    this.router.navigate([this.routerLinkInput], { relativeTo: this.route });
+  }
 
   ngOnDestroy(): void {
     this.distroyed$.next(true);

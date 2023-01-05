@@ -1,19 +1,16 @@
-import { Component, OnDestroy, OnInit } from "@angular/core";
-import { Router } from "@angular/router";
-import { Subject } from "rxjs";
-
+import { Component, OnDestroy, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { Subject } from 'rxjs';
 
 @Component({
   selector: 'home',
   templateUrl: './store.poc.home.component.html',
-  styleUrls: ['./store.poc.home.component.scss']
+  styleUrls: ['./store.poc.home.component.scss'],
 })
 export class StorePocHomeComponent implements OnInit, OnDestroy {
-  private onDestory$: Subject<boolean> = new Subject();
+  private onDestroy$: Subject<boolean> = new Subject();
 
-  constructor(
-    private router: Router
-  ) { }
+  constructor(private router: Router) {}
 
   ngOnInit() {
     console.log('in StoreHomeComponent');
@@ -25,7 +22,7 @@ export class StorePocHomeComponent implements OnInit, OnDestroy {
   }
 
   ngOnDestroy() {
-    this.onDestory$.next(true);
-    this.onDestory$.complete();
+    this.onDestroy$.next(true);
+    this.onDestroy$.complete();
   }
 }

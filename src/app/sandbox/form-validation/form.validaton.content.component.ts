@@ -1,7 +1,5 @@
 import { Component, OnDestroy, OnInit, ViewEncapsulation } from '@angular/core';
-import { FormGroup, FormControl, FormBuilder, Validators, AbstractControl } from '@angular/forms';
-import { Router } from '@angular/router';
-import { faFilm } from '@fortawesome/free-solid-svg-icons';
+import { AbstractControl, FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { Subject } from 'rxjs';
 import { SANDBOX_BACK_TO_HOME, SANDBOX_HOME_LINK } from '../models/sandbox.constants';
 import Validation from './validation';
@@ -9,13 +7,13 @@ import Validation from './validation';
 @Component({
   selector: 'app-form-validation-content',
   templateUrl: './form.validaton.content.component.html',
-  styleUrls: ['./form.validaton.content.component.scss'],
+  styleUrls: ['./form.validaton.content.component.scss', '../../../assets/scss/bootstrap.min.css'],
   // encapsulation: ViewEncapsulation.None,
   encapsulation: ViewEncapsulation.ShadowDom,
   // encapsulation: ViewEncapsulation.Emulated,
 })
 export class FormValidationContentComponent implements OnInit, OnDestroy {
-  private onDestory$: Subject<boolean> = new Subject();
+  private onDestroy$: Subject<boolean> = new Subject();
 
   linkText = SANDBOX_BACK_TO_HOME;
   routerLinkInput = SANDBOX_HOME_LINK;
@@ -68,7 +66,7 @@ export class FormValidationContentComponent implements OnInit, OnDestroy {
   }
 
   ngOnDestroy() {
-    this.onDestory$.next(true);
-    this.onDestory$.complete();
+    this.onDestroy$.next(true);
+    this.onDestroy$.complete();
   }
 }
