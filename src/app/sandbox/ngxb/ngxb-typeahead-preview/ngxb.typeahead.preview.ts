@@ -3,7 +3,7 @@ import { TypeaheadMatch } from 'ngx-bootstrap/typeahead';
 import { UsState } from 'src/app/shared/models/shared.model';
 
 @Component({
-  selector: 'app-form-validation-content',
+  selector: 'app-ngxb-typeahead-preview',
   templateUrl: './ngxb.typeahead.preview.html',
   styleUrls: ['./ngxb.typeahead.preview.scss', '../../../../assets/scss/bootstrap.min.css'],
   // encapsulation: ViewEncapsulation.None,
