@@ -1,0 +1,15 @@
+<div class="mainContainer">
+    <h1>NBA Player list</h1>
+    <app-back-angle [linkText]=linkText [routerLinkInput]=routerLinkInput></app-back-angle>
+
+    <h3>Force refreshing by clicking the Refresh button ... see timestamp changing</h3>
+
+    <button (click)="refreshData()" class="btn btn-success">Refresh</button>
+
+    <ul *ngIf="players$ | async as players">
+        <li *ngFor="let player of players">
+            {{ player.fullName }} {{ player.processed | date: 'medium' }}
+        </li>
+        <div>Check render: {{ checkRender() }}</div>
+    </ul>
+</div>

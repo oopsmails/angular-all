@@ -1,0 +1,13 @@
+<div class="mainContainer">
+  <h1>Search City</h1>
+  <app-back-angle [linkText]="linkText" [routerLinkInput]="routerLinkInput"></app-back-angle>
+  <div class="card">
+    <div class="input-wrap">
+      <img src="../assets/Group%201.png" width="18px" class="search" />
+      <input type="search" [(ngModel)]="searchText" placeholder="Search city" />
+    </div>
+    <div *ngFor="let city of usCities$ | async | CityFilterPipe : searchText" class="city">
+      {{ city.id }} - {{ city.cityName }} -{{ city.inStateName }}
+    </div>
+  </div>
+</div>

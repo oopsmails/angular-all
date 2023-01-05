@@ -1,0 +1,101 @@
+<app-back-angle [linkText]="linkText" [routerLinkInput]="routerLinkInput"></app-back-angle>
+
+<!-- <div class="backDiv">
+  <a (click)="navTo()">
+    <fa-icon [icon]="['fas', 'angle-left']" class="faIconAngleLeft"></fa-icon>{{ linkText }}
+  </a>
+</div> -->
+
+<!-- <a href="#"><i class="fa fa-twitter fa-3x" aria-hidden="true"></i></a> -->
+<!-- <fa-icon [icon]="['fas', 'coffee']" class="faIconAngleLeft"></fa-icon> -->
+
+<div class="container">
+  <div style="text-align: center">
+    <h1 class="m-4">Welcome to {{ title }}!</h1>
+  </div>
+  <h4>This project is an example of how to use switchMap with reactive forms.</h4>
+  <p>
+    Notice how the results without switchMap show results using stale data and have multiple active
+    requests at a time. The results with switchMap sometimes appear to take longer, but the data is
+    always accurate.
+  </p>
+  <p>Increase the delay time and type slowly to see a more pronounced example.</p>
+  <p class="font-italic">
+    Usage – Start typing in any of the fields below. If what you are typing matches with the data,
+    you will see filtered results beneath – with and without switchMap
+  </p>
+  <div class="row">
+    <div class="col col-md-8">
+      <form [formGroup]="customerFormGroup">
+        <div class="form-row">
+          <div class="form-group col-md-6">
+            <label for="name">Name</label>
+            <input id="name" type="text" class="form-control" formControlName="name" />
+          </div>
+          <div class="form-group col-md-6">
+            <label for="address">Address</label>
+            <input id="address" type="text" class="form-control" formControlName="address" />
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="form-group col-md-6">
+            <label for="city">City</label>
+            <input id="city" type="text" class="form-control" formControlName="city" />
+          </div>
+          <div class="form-group col-md-2">
+            <label for="state">State</label>
+            <input id="state" type="text" class="form-control" formControlName="state" />
+          </div>
+          <div class="form-group col-md-4">
+            <label for="zip">Zip</label>
+            <input id="zip" type="text" class="form-control" formControlName="zip" />
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="form-group col-md-4">
+            <label for="delayTime">Delay Time (in milliseconds)</label>
+            <input id="delayTime" type="text" class="form-control" formControlName="delayTime" />
+          </div>
+        </div>
+      </form>
+    </div>
+    <div class="col col-md-4">
+      <p class="font-weight-bold">customerFormGroup Model:</p>
+      <pre>{{ customerFormGroup.value | json }}</pre>
+    </div>
+  </div>
+  <hr class="divider" />
+  <div class="row">
+    <div class="col">
+      <div class="card">
+        <div class="card-header font-weight-bold">Results with switchMap</div>
+        <div class="card-body">
+          <pre [class.text-danger]="requestsWithSwitchmap?.length > 1">
+Active Requests: {{ requestsWithSwitchmap | json }}</pre
+          >
+          <p
+            [class.text-success]="
+              customersWithSwitchmap?.length === customersWithoutSwitchmap?.length
+            "
+          >
+            Results Count: {{ customersWithSwitchmap?.length }}
+          </p>
+          <pre>{{ customersWithSwitchmap | json }}</pre>
+        </div>
+      </div>
+    </div>
+    <!-- <div class="col">
+      <div class="card">
+        <div class="card-header font-weight-bold">Results without switchMap</div>
+        <div class="card-body">
+          <pre
+            [class.text-danger]="requestsWithoutSwitchmap?.length > 1">Active Requests: {{requestsWithoutSwitchmap | json}}</pre>
+          <p [class.text-danger]="customersWithSwitchmap?.length !== customersWithoutSwitchmap?.length"
+            [class.text-success]="customersWithSwitchmap?.length === customersWithoutSwitchmap?.length">
+            Results Count: {{customersWithoutSwitchmap?.length}}</p>
+          <pre>{{customersWithoutSwitchmap | json}}</pre>
+        </div>
+      </div>
+    </div> -->
+  </div>
+</div>

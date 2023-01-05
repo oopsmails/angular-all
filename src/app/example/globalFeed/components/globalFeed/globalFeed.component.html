@@ -1,0 +1,9 @@
+<div class="mainContainer">
+    <app-back-angle [linkText]="linkText" [routerLinkInput]="routerLinkInput"></app-back-angle>
+    <h1>GlobalFeedComponent</h1>
+
+    <div>
+        <h2>Hello Global Feed</h2>
+        <p>Items in GlobalFeedComponent: {{ items$ | async | json }}</p>
+    </div>
+</div>

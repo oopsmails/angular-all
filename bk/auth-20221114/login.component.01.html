@@ -1,0 +1,106 @@
+<div class="mainContainer">
+  <app-back-angle [linkText]="linkText" [routerLinkInput]="routerLinkInput"></app-back-angle>
+
+  <div class="wrapper">
+    <h1>Sign In</h1>
+
+    <p class="text-xs-center">
+      <a [routerLink]="['/register']">Need an account?</a>
+    </p>
+
+    <mc-backend-error-messages
+      *ngIf="backendErrors$ | async"
+      [backendErrors]="backendErrors$ | async"
+    >
+    </mc-backend-error-messages>
+
+    <form [formGroup]="form" (ngSubmit)="onSubmit()">
+      <fieldset>
+        <fieldset class="form-group">
+          <input
+            type="text"
+            class="form-control form-control-lg"
+            placeholder="Email"
+            formControlName="email"
+          />
+        </fieldset>
+        <fieldset class="form-group">
+          <input
+            type="password"
+            class="form-control form-control-lg"
+            placeholder="Password"
+            formControlName="password"
+          />
+        </fieldset>
+        <button
+          class="btn btn-lg btn-primary pull-xs-right"
+          type="submit"
+          [disabled]="isSubmitting$ | async"
+        >
+          Sign in
+        </button>
+      </fieldset>
+    </form>
+  </div>
+
+  <hr />
+
+  <!-- <div class="container">
+    <div class="wrapper">
+      <div class="title"><span>Sign In</span></div>
+
+      <form [formGroup]="form" (ngSubmit)="onSubmit()">
+        <fieldset>
+          <fieldset class="form-group">
+            <div class="row">
+              <i><fa-icon icon="envelope"></fa-icon></i>
+              <input
+                type="text"
+                class="form-control form-control-lg"
+                placeholder="Email"
+                formControlName="email"
+              />
+            </div>
+          </fieldset>
+          <fieldset class="form-group">
+            <div class="row">
+              <i><fa-icon icon="lock"></fa-icon></i>
+              <input
+                type="password"
+                class="form-control form-control-lg"
+                placeholder="Password"
+                formControlName="password"
+              />
+            </div>
+          </fieldset>
+          <div class="pass"><a href="#">Forgot password?</a></div>
+          <fieldset class="form-group">
+            <div class="row button">
+              <input type="submit" value="Login" [disabled]="isSubmitting$ | async" />
+            </div>
+          </fieldset>
+        </fieldset>
+        <div class="signup-link">
+          Not a member? <a [routerLink]="['/register']">Need an account?</a>
+        </div>
+      </form>
+    </div>
+  </div> -->
+
+  <hr />
+
+  <!-- <i class="fas fa-user"><fa-icon [icon]="faUser"></fa-icon></i>
+    <fa-icon [icon]="faUser"></fa-icon> -->
+
+  <fa-icon icon="film"></fa-icon>
+  <fa-icon icon="fish"></fa-icon>
+  <fa-icon icon="coffee"></fa-icon>
+  <fa-icon icon="user"></fa-icon>
+  <fa-icon icon="lock"></fa-icon>
+  <hr />
+  <div class="row">
+    <i><fa-icon icon="film"></fa-icon></i>
+  </div>
+
+  <p><a routerLink="">routerLink home</a></p>
+</div>

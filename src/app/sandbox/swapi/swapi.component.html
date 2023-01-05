@@ -1,0 +1,21 @@
+<div class="mainContainer">
+  <div>
+    <h2>Hello {{ title }}, NOT working, see comments in sandbox.about.component.00.notwork.ts</h2>
+    <app-back-angle [linkText]=linkText [routerLinkInput]=routerLinkInput></app-back-angle>
+
+    <h3>Timer auto refresh cache, nav away from this page and come back and see people changed.</h3>
+    <p>
+      Timer auto refresh cache. 
+    </p>
+
+    <p>
+      People in SwapiComponent: {{ people$ | async | json}}
+    </p>
+
+    <p *ngIf="showNewSection">
+      People in SwapiComponent, delaying to compare: {{ people$ | async | json}}
+    </p>
+
+  </div>
+
+</div>

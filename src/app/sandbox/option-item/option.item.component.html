@@ -1,0 +1,19 @@
+<div class="mainContainer">
+    <h1>Option Items: Auto refresh cache with Timer</h1>
+
+    <div>
+        <h2>Hello {{ title }}</h2>
+        <app-back-angle [linkText]="linkText" [routerLinkInput]="routerLinkInput"></app-back-angle>
+        <p>
+            Timer added in OptionItemService ... refreshing 30s, now:
+            {{ nowCurrent | date: 'HH:mm:ss' }}
+        </p>
+
+        <p>Items in OptionItemComponent: {{ items$ | async | json }}</p>
+
+        <p *ngIf="showNewSection">
+            Items in OptionItemComponent, delay 5s but auto refreshed as well:
+            {{ items$ | async | json }}
+        </p>
+    </div>
+</div>

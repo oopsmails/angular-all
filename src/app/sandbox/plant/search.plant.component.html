@@ -1,0 +1,27 @@
+<div class="mainContainer">
+    <h1>Search Plant</h1>
+    <app-back-angle [linkText]=linkText [routerLinkInput]=routerLinkInput></app-back-angle>
+    <nav class="navbar">
+        <img src="../assets/Group%201.png" width="18px" class="search">
+        <input class="form-control" type="text" name="searchStr" [(ngModel)]="searchStr" placeholder="Search Plant" />
+    </nav>
+    <table class="table table-bordered">
+        <thead>
+            <tr>
+                <th>id</th>
+                <th>name</th>
+                <th>scientific_name</th>
+                <th>family</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let item of allItems | PlantFilterPipe: searchStr">
+                <td>{{ item.id }}</td>
+                <td>{{ item.name }}</td>
+                <td>{{ item.scientific_name }}</td>
+                <td>{{ item.family }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+</div>

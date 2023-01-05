@@ -1,0 +1,50 @@
+<div class="mainContainer">
+  <app-back-angle [linkText]="linkText" [routerLinkInput]="routerLinkInput"></app-back-angle>
+
+  <div class="container">
+    <div class="wrapper">
+      <div class="title"><span>Sign Up</span></div>
+
+      <p class="needaccount">
+        <a [routerLink]="['/login']">Have an account?</a>
+      </p>
+
+      <div class="authError">
+        <mc-backend-error-messages
+          *ngIf="backendErrors$ | async"
+          [backendErrors]="backendErrors$ | async"
+        >
+        </mc-backend-error-messages>
+      </div>
+
+      <form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
+        <fieldset class="form-field-set">
+          <div class="form-group-row">
+            <i><fa-icon icon="user"></fa-icon></i>
+            <input type="text" placeholder="Username" formControlName="username" />
+          </div>
+        </fieldset>
+        <fieldset class="form-field-set">
+          <div class="form-group-row">
+            <i><fa-icon icon="envelope"></fa-icon></i>
+            <input type="text" placeholder="Email" formControlName="email" />
+          </div>
+        </fieldset>
+        <fieldset class="form-field-set">
+          <div class="form-group-row">
+            <i><fa-icon icon="lock"></fa-icon></i>
+            <input type="password" placeholder="Password" formControlName="password" />
+          </div>
+        </fieldset>
+        <fieldset class="form-field-set">
+          <div class="form-group-row login-button">
+            <input type="submit" value="Sign up" [disabled]="isSubmitting$ | async" />
+          </div>
+        </fieldset>
+      </form>
+    </div>
+  </div>
+
+  <hr />
+  <p><a routerLink="">routerLink home</a></p>
+</div>

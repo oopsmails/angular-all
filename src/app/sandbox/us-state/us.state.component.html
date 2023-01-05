@@ -1,0 +1,14 @@
+<div class="mainContainer">
+  <h1>US States</h1>
+  <app-back-angle [linkText]="linkText" [routerLinkInput]="routerLinkInput"></app-back-angle>
+
+  <!-- <div>items: {{ usStates$ | async | json }}</div> -->
+  <!-- <div *ngFor="let state of usStates$  | async">
+        {{ state.id }} - {{ state.stateName }}
+    </div> -->
+
+  <!-- <div>items: {{ usCities$ | async | json }}</div> -->
+  <div *ngFor="let city of usCities$ | async">
+    {{ city.id }} - {{ city.cityName }} - {{ city.inStateName }}
+  </div>
+</div>
