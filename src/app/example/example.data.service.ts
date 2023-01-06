@@ -1,23 +1,23 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable, OnDestroy } from '@angular/core';
 import { Observable, Subject } from 'rxjs';
-import { OptionItem } from 'src/app/shared/models/sample.model';
+import { RandomItem } from '../shared/models';
 import { SharedDataService } from '../shared/services/shared.data.service';
 
 @Injectable({
-    providedIn: 'root',
+  providedIn: 'root',
 })
 export class ExampleDataService implements OnDestroy {
-    private onDestroy$: Subject<boolean> = new Subject();
+  private onDestroy$: Subject<boolean> = new Subject();
 
-    constructor(private httpClient: HttpClient, private sharedDataService: SharedDataService) {}
+  constructor(private httpClient: HttpClient, private sharedDataService: SharedDataService) {}
 
-    getOptionData(): Observable<OptionItem[]> {
-        return this.sharedDataService.getOptionData();
-    }
+  getOptionData(): Observable<RandomItem[]> {
+    return this.sharedDataService.getRandomItems();
+  }
 
-    ngOnDestroy(): void {
-        this.onDestroy$.next(true);
-        this.onDestroy$.complete();
-    }
+  ngOnDestroy(): void {
+    this.onDestroy$.next(true);
+    this.onDestroy$.complete();
+  }
 }

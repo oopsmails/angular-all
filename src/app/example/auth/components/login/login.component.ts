@@ -41,13 +41,13 @@ export class LoginComponent implements OnInit, OnDestroy {
   }
 
   initializeForm(): void {
+    // user365@test.com, user365/test
     this.loginFormGroup = this.formBuilder.group({
-      // email: [
-      //   '',
-      //   Validators.required,
-      //   Validators.pattern('^[a-z0-9._%+-]+@[a-z0-9.-]+\\.[a-z]{2,4}$'),
-      // ],
-      email: ['', [Validators.required, Validators.email]],
+      email: [
+        '',
+        [Validators.required, Validators.pattern('^[a-z0-9._%+-]+@[a-z0-9.-]+\\.[a-z]{2,4}$')],
+      ],
+      // email: ['', [Validators.required, Validators.email]],
       password: ['', Validators.required],
     });
   }

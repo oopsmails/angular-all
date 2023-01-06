@@ -3,17 +3,8 @@ import { AppStateInterface } from 'src/app/shared/types/appState.interface';
 
 export const selectFeature = (state: AppStateInterface) => state.posts;
 
-export const isLoadingSelector = createSelector(
-  selectFeature,
-  (state) => state.isLoading
-);
+export const isLoadingSelector = createSelector(selectFeature, (state) => state.isLoading);
 
-export const postsSelector = createSelector(
-  selectFeature,
-  (state) => state.posts
-);
+export const postsSelector = createSelector(selectFeature, (state) => state.posts);
 
-export const errorSelector = createSelector(
-  selectFeature,
-  (state) => state.error
-);
+export const errorSelector = createSelector(selectFeature, (state) => state.error);
