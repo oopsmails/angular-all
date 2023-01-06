@@ -1,8 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable, OnDestroy } from '@angular/core';
 import { mergeMap, Observable, Subject, takeUntil, timer } from 'rxjs';
-import { UsState } from 'src/app/shared/models';
-import { OptionItem } from 'src/app/shared/models/sample.model';
+import { RandomItem, UsState } from 'src/app/shared/models';
 import { SharedDataService } from 'src/app/shared/services/shared.data.service';
 import { UsStateService } from '../us-state/us.state.city.service';
 
@@ -18,8 +17,8 @@ export class SandboxDataService implements OnDestroy {
     private sharedDataService: SharedDataService
   ) {}
 
-  getOptionData(): Observable<OptionItem[]> {
-    return this.sharedDataService.getOptionData();
+  getOptionData(): Observable<RandomItem[]> {
+    return this.sharedDataService.getRandomItems();
   }
 
   mockHttpGetAllUsStates(): Observable<UsState[]> {

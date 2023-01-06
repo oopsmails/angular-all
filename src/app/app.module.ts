@@ -6,7 +6,6 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { CoreModule } from './core/core.module';
-import { AppInitService } from './core/services/app.init.service';
 import { ExampleModule } from './example/example.model';
 import { HomeModule } from './home/home.module';
 import { SandboxModule } from './sandbox/sandbox.model';
@@ -29,7 +28,6 @@ import { StorePocModule } from './store-poc/store.poc.module';
     StorePocModule, // has to before AppRoutingModule
     AppRoutingModule,
   ],
-  providers: [AppInitService],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

@@ -1,19 +1,15 @@
-import { takeUntil } from 'rxjs/operators';
-import { AfterViewInit, Component, ElementRef, OnInit, ViewChild, OnDestroy } from '@angular/core';
-import { faCoffee } from '@fortawesome/free-solid-svg-icons';
-import { faAngleDown } from '@fortawesome/free-solid-svg-icons';
-import { fromEvent, Subject, Subscription } from 'rxjs';
+import { AfterViewInit, Component, ElementRef, OnDestroy, OnInit, ViewChild } from '@angular/core';
+import { fromEvent, Subject, takeUntil } from 'rxjs';
 
 @Component({
-  selector: 'navbar-fixed',
-  templateUrl: './navbar-fixed.component.html',
-  styleUrls: ['./navbar-fixed.component.scss'],
+  selector: 'app-nav-bar',
+  templateUrl: './app-nav-bar.component.html',
+  styleUrls: ['./app-nav-bar.component.scss'],
 })
-export class NavbarFixedComponent implements OnInit, AfterViewInit, OnDestroy {
+export class AppNavBarComponent implements OnInit, AfterViewInit, OnDestroy {
   @ViewChild('navbar') navbarElementRef: ElementRef;
   @ViewChild('menubar') menubarElementRef: ElementRef;
 
-  faAngleDown = faAngleDown;
   // navbarClick: Subscription; // old way to unsubscribe
 
   private onDestroy$: Subject<boolean> = new Subject();
