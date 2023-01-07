@@ -50,7 +50,7 @@
           <div class="form-group-row">
             <i><fa-icon icon="lock"></fa-icon></i>
             <input type="password" placeholder="Password" formControlName="password" />
-            <div *ngIf="submitted && f['email'].errors" class="invalid-feedback">
+            <div *ngIf="submitted && f['password'].errors" class="invalid-feedback">
               <div *ngIf="f['password'].errors['required']">Password is required</div>
               <div *ngIf="f['password'].errors['cannotContainSpace']">
                 Password cannot contain white space
