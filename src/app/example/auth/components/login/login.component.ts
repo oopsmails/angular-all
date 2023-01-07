@@ -6,6 +6,7 @@ import { Observable, of } from 'rxjs';
 import { EXAMPLE_BACK_TO_HOME, EXAMPLE_HOME_LINK } from 'src/app/example/example.constantes';
 
 import { BackendErrorsInterface } from 'src/app/shared/types/backendErrors.interface';
+import { GenericValidator } from 'src/app/shared/validators/generic-validator';
 import { loginAction } from '../../store/actions/login.action';
 import { cleanValidationErrorAction } from '../../store/actions/sync.action';
 import { isSubmittingSelector, validationErrorsSelector } from '../../store/selectors';
@@ -45,10 +46,14 @@ export class LoginComponent implements OnInit, OnDestroy {
     this.loginFormGroup = this.formBuilder.group({
       email: [
         '',
-        [Validators.required, Validators.pattern('^[a-z0-9._%+-]+@[a-z0-9.-]+\\.[a-z]{2,4}$')],
+        [
+          Validators.required,
+          Validators.pattern('^[a-z0-9._%+-]+@[a-z0-9.-]+\\.[a-z]{2,4}$'),
+          GenericValidator.cannotContainSpace,
+        ],
       ],
       // email: ['', [Validators.required, Validators.email]],
-      password: ['', Validators.required],
+      password: ['', [Validators.required, GenericValidator.cannotContainSpace]],
     });
   }
 
