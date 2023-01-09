@@ -22,4 +22,16 @@ https://github.com/monsterlessonsacademy/monsterlessonsacademy/tree/233-ngrx-ang
 
 - Common shared module
 - Login ok, user365@test.com, user365/test
--
+
+## 20230109: making angular v10 version, develop-a10 branch
+
+### use rxjs 6.5.3 first
+
+after all other libs are settled then change it back to 7.5.2
+
+```
+"rxjs": "~6.5.3",
+
+"rxjs": "~7.5.2",
+
+```
