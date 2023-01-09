@@ -52,6 +52,7 @@
             <input type="password" placeholder="Password" formControlName="password" />
             <div *ngIf="submitted && f['password'].errors" class="invalid-feedback">
               <div *ngIf="f['password'].errors['required']">Password is required</div>
+              <div *ngIf="f['password'].errors['minLength']">Password min length is 3</div>
               <div *ngIf="f['password'].errors['cannotContainSpace']">
                 Password cannot contain white space
               </div>
